@@ -1,3 +1,7 @@
 p {
     font-family: Bahnschrift;
 }
+
+.active-link {
+    border-bottom: 2px solid white;
+}
