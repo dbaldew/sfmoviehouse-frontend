@@ -1,7 +1,7 @@
-p {
-    font-family: Bahnschrift;
-}
-
 .active-link {
+    color: aliceblue;
     border-bottom: 2px solid white;
+}
+p {
+    font-family: Cambria;
 }

@@ -2,12 +2,13 @@ import React from "react";
 import { Link } from 'react-router-dom';
 
 
-
-function Login(){
+function SignUp(){
 
     return(
-        <p>login</p>
+        <>
+
+        </>
     )
 
 }
-export default Login;
+export default SignUp;
