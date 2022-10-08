@@ -1,12 +1,12 @@
 import {createContext, useState} from "react";
-import {useHistory} from "react-router-dom";
+import { useHistory } from 'react-router-dom';
 
 export const AuthContext = createContext({});
 
 function AuthContextProvider ({children}){
 
     const [isAuth, toggleIsAuth] = useState(false);
-    const history = useHistory;
+    const history = useHistory();
 
     function login(){
         toggleIsAuth(true);
