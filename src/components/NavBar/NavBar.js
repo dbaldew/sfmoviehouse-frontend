@@ -1,8 +1,8 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
-import SignUp from "../SignUp/SignUp";
 import Login from "../Login/Login";
 import './NavBar.css';
+
 
 function NavBar(){
 
@@ -21,18 +21,10 @@ function NavBar(){
                             <NavLink to="/admin" activeClassName="active-link">Admin</NavLink>
                         </li>
                     </ul>
+
                 </div>
-                <div className="login">
-                    <div>
-                        <Login>
-
-                        </Login>
-                    </div>
-                    <div className="signup">
-                        <SignUp>
-
-                        </SignUp>
-                    </div>
+                <div className="cred">
+                    <Login/>
                 </div>
             </nav>
         </>

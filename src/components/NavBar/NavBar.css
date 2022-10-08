@@ -1,10 +1,11 @@
-nav {
+.nav-container {
     background-color: crimson;
     color: white;
     display: flex;
-    padding: 0 32px;
+    flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    height: 300px;
 }
 
 nav a,
@@ -19,14 +20,33 @@ nav a:active {
 ul{
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
     list-style-type: none;
 
 }
 
 li{
-    padding: 20px;
+    padding:10px;
 }
 
+.signup-link{
+    text-decoration: underline;
+}
 
+button {
+    font-family: Cambria;
+    font-size: 15px;
+    color: crimson;
+    margin: 10px;
+
+}
+.cred {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    list-style-type: none;
+    padding: 10px;
+    margin: 10px;
+}
 
 
