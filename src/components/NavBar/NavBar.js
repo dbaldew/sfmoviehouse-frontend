@@ -1,10 +1,12 @@
-import React from "react";
+import React, {useContext} from "react";
 import {NavLink} from "react-router-dom";
 import Login from "../Login/Login";
 import './NavBar.css';
-
+import {AuthContext} from "../../context/AuthContext";
 
 function NavBar(){
+
+    const {isAuth} = useContext(AuthContext)
 
     return (
         <>
@@ -15,10 +17,11 @@ function NavBar(){
                             <NavLink to="/" exact activeClassName="active-link">Home</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/profile" activeClassName="active-link">Profile</NavLink>
+                            {isAuth ? <NavLink to="/profile" activeClassName="active-link">Profile</NavLink>: <NavLink to="/" />}
+
                         </li>
                         <li>
-                            <NavLink to="/admin" activeClassName="active-link">Admin</NavLink>
+                            {isAuth?<NavLink to="/admin" activeClassName="active-link">Admin</NavLink>: <NavLink to="/"/>}
                         </li>
                     </ul>
 
