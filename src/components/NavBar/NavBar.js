@@ -3,6 +3,7 @@ import {NavLink} from "react-router-dom";
 import Login from "../Login/Login";
 import './NavBar.css';
 import {AuthContext} from "../../context/AuthContext";
+import Logout from "../Logout/Logout";
 
 function NavBar(){
 
@@ -26,9 +27,15 @@ function NavBar(){
                     </ul>
 
                 </div>
-                <div className="cred">
+                {isAuth?
+                    <div>
+                        <Logout/>
+                    </div>
+                    :
+                    <div className="cred">
                     <Login/>
-                </div>
+                    </div>
+                }
             </nav>
         </>
     );

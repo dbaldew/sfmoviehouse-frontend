@@ -4,7 +4,7 @@ import NavBar from "./components/NavBar/NavBar";
 import Home from "./pages/Home/Home";
 import Profile from "./pages/Profile/Profile";
 import Admin from "./pages/Admin/Admin";
-import Login from "./components/Login/Login";
+import SignUp from "./pages/SignUp/SignUp";
 
 function App() {
   return (
@@ -12,7 +12,6 @@ function App() {
         <div className="App">
           <Router>
             <NavBar/>
-
             <Switch>
               <Route exact path="/">
                 <Home/>
@@ -22,6 +21,9 @@ function App() {
               </Route>
               <Route path="/admin">
                 <Admin/>
+              </Route>
+              <Route path="/signup">
+                <SignUp/>
               </Route>
             </Switch>
           </Router>
