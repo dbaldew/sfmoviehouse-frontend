@@ -9,25 +9,28 @@ import SignUp from "./pages/SignUp/SignUp";
 function App() {
   return (
       <>
-        <div className="App">
-          <Router>
-            <NavBar/>
-            <Switch>
-              <Route exact path="/">
-                <Home/>
-              </Route>
-              <Route path="/profile">
-                <Profile/>
-              </Route>
-              <Route path="/admin">
-                <Admin/>
-              </Route>
-              <Route path="/signup">
-                <SignUp/>
-              </Route>
-            </Switch>
-          </Router>
+          <div className="App">
+            <Router>
+              <NavBar/>
+              <div className="flex-container">
+              <Switch>
+                <Route exact path="/">
+                  <Home/>
+                </Route>
+                <Route path="/profile">
+                  <Profile/>
+                </Route>
+                <Route path="/admin">
+                  <Admin/>
+                </Route>
+                <Route path="/signup">
+                  <SignUp/>
+                </Route>
+              </Switch>
+              </div>
+            </Router>
         </div>
+
       </>
   );
 }

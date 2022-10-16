@@ -1,7 +1,25 @@
-.active-link {
-    color: aliceblue;
-    border-bottom: 2px solid white;
+* {
+    padding: 0px;
+    margin: 0px;
+
 }
+.flex-container {
+    width: 100vw;
+    height: 100vh;
+    background-color: coral;
+    display: flex;
+}
+
+Link:hover, a:visited{
+    color: white;
+    text-decoration: underline;
+}
+Link:active{
+    color: white;
+    text-decoration: none;
+}
+
 p {
     font-family: Cambria;
 }
+
