@@ -1,9 +1,8 @@
 import React, {useContext} from "react";
-import {NavLink} from "react-router-dom";
-import Login from "../Login/Login";
+import {NavLink, Link} from "react-router-dom";
 import './NavBar.css';
 import {AuthContext} from "../../context/AuthContext";
-import Logout from "../Logout/Logout";
+import Login from "../Auth/Login/Login";
 
 function NavBar(){
 
@@ -12,30 +11,25 @@ function NavBar(){
     return (
         <>
             <nav className="nav-container">
-                <div className="navbar">
+                <div>
                     <ul>
                         <li>
                             <NavLink to="/" exact activeClassName="active-link">Home</NavLink>
                         </li>
                         <li>
                             {isAuth ? <NavLink to="/profile" activeClassName="active-link">Profile</NavLink>: <NavLink to="/" />}
-
                         </li>
                         <li>
                             {isAuth?<NavLink to="/admin" activeClassName="active-link">Admin</NavLink>: <NavLink to="/"/>}
                         </li>
                     </ul>
-
                 </div>
-                {isAuth?
-                    <div>
-                        <Logout/>
-                    </div>
-                    :
-                    <div className="cred">
+                <div>
+                    <h1>SfMovieHouse</h1>
+                </div>
+                <div>
                     <Login/>
-                    </div>
-                }
+                </div>
             </nav>
         </>
     );

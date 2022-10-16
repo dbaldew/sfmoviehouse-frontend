@@ -1,10 +1,9 @@
 import React, {useContext, useEffect, useState} from "react";
-import {Link} from 'react-router-dom';
-import {AuthContext} from "../../context/AuthContext";
+import {Link, NavLink} from 'react-router-dom';
+import {AuthContext} from "../../../context/AuthContext";
 import "./Login.css"
 import axios from "axios";
-
-
+import Logout from "../Logout/Logout";
 
 function Login() {
 
@@ -12,6 +11,7 @@ function Login() {
     const [password, SetPassword] = useState("");
     const [error, toggleError] = useState(false);
     const {login} = useContext(AuthContext);
+    const {isAuth} = useContext(AuthContext)
 
     const source = axios.CancelToken.source();
 
@@ -44,9 +44,10 @@ function Login() {
 
     return (
         <>
-            <div className="cred">
-                <div className="login">
-
+            <div className="login-container">
+                {isAuth?
+                    <Logout/>
+                    :
                     <form className="login-form" onSubmit={handleSubmit}>
                         <label htmlFor="username">
                             username:
@@ -72,11 +73,11 @@ function Login() {
                         <button type="submit"
                         >Inloggen
                         </button>
+                        <div>
+                            <p>No Account? Register <NavLink to="/signup" activeClassName="active-link">here!</NavLink></p>
+                        </div>
                     </form>
-
-                    <p>No account?</p>
-                    <p className="signup-link"><Link to="/signup">Sign Up!</Link></p>
-                </div>
+                }
             </div>
         </>
     )

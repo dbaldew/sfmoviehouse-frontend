@@ -2,44 +2,21 @@
     background-color: crimson;
     color: white;
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    height: 150px;
     justify-content: space-between;
-    height: 300px;
 }
 
-nav a,
-nav a:visited,
-nav a:active {
-    color: white;
-    text-decoration: none;
-}
-nav a:active {
-    text-decoration: underline;
-}
 ul{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     list-style-type: none;
-
 }
 
 li{
-    padding:10px;
+    padding:20px;
 }
 
-.signup-link{
-    text-decoration: underline;
-}
-
-button {
-    font-family: Cambria;
-    font-size: 15px;
-    color: crimson;
-    margin: 10px;
-
-}
 
 
 

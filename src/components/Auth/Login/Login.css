@@ -1,7 +1,4 @@
-.sign-up-container{
-    margin: 15px;
-}
-.signup-form {
+.login-container{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -14,6 +11,7 @@
     margin: 20px;
     width: 200px;
     background-color: dodgerblue;
+
 }
 
 button {

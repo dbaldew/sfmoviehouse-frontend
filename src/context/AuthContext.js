@@ -20,7 +20,7 @@ function AuthContextProvider({children}) {
 
         if(token && isTokenValid(token)){
             const decoded = jwt_decode(token);
-            fetchUserData(token, decoded.sub);
+            fetchUserData(decoded.sub, token);
         } else {
             toggleIsAuth({
                 isAuth: false,
@@ -35,7 +35,10 @@ function AuthContextProvider({children}) {
 
         localStorage.setItem('token', JWT);
         const decoded = jwt_decode(JWT);
+
         fetchUserData(decoded.sub, JWT, "/profile")
+        console.log("user has logged in");
+        history.push("/profile")
 
     }
 
@@ -46,6 +49,7 @@ function AuthContextProvider({children}) {
            user: null,
            status:'done',
        });
+
         console.log("user has logged out");
         history.push("/")
     }
