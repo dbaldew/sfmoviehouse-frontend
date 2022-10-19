@@ -45,36 +45,33 @@ function SignUp() {
 
     return (
         <>
-            <div className="sign-up-container">
-                <form className="signup-form" onSubmit={handleSubmit}>
-                    <label htmlFor="username">
-                        username:
-                        <input type="username"
-                               id="username"
-                               name="username"
-                               value={username}
-                               onChange={(e) => setUsername(e.target.value)}
-                        />
-                    </label>
+            <form className="signup-form" onSubmit={handleSubmit}>
+                <label htmlFor="username">
+                    username:
+                    <input type="username"
+                           id="username"
+                           name="username"
+                           value={username}
+                           onChange={(e) => setUsername(e.target.value)}
+                    />
+                </label>
 
-                    <label htmlFor="password">
-                        wachtwoord:
-                        <input type="text"
-                               id="password"
-                               name="password"
-                               value={password}
-                               onChange={(e) => setPassword(e.target.value)}
-                        />
-                    </label>
-                    {error && <p className="error">password has to be at least 6 characters</p>}
-                    <button type="submit"
-                    >Register
-                    </button>
-                </form>
-            </div>
+                <label htmlFor="password">
+                    wachtwoord:
+                    <input type="text"
+                           id="password"
+                           name="password"
+                           value={password}
+                           onChange={(e) => setPassword(e.target.value)}
+                    />
+                </label>
+                {error && <p className="error">password has to be at least 6 characters</p>}
+                <button type="submit"
+                >Register
+                </button>
+            </form>
         </>
     )
-
 }
 
 export default SignUp;

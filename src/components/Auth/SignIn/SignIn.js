@@ -1,16 +1,16 @@
 import React, {useContext, useEffect, useState} from "react";
 import {Link, NavLink} from 'react-router-dom';
 import {AuthContext} from "../../../context/AuthContext";
-import "./Login.css"
+import "./SignIn.css"
 import axios from "axios";
-import Logout from "../Logout/Logout";
 
-function Login() {
+
+function SignIn() {
 
     const [username, SetUsername] = useState("");
     const [password, SetPassword] = useState("");
     const [error, toggleError] = useState(false);
-    const {login} = useContext(AuthContext);
+    const {login, logout} = useContext(AuthContext);
     const {isAuth} = useContext(AuthContext)
 
     const source = axios.CancelToken.source();
@@ -44,37 +44,41 @@ function Login() {
 
     return (
         <>
-            <div className="login-container">
-                {isAuth?
-                    <Logout/>
+            <div className="sign-in-container">
+                {isAuth ?
+                    <button type="button"
+                            onClick={logout}
+                    >logout
+                    </button>
                     :
                     <form className="login-form" onSubmit={handleSubmit}>
                         <label htmlFor="username">
-                            username:
-                            <input type="text"
-                                   id="username"
-                                   name="username"
-                                   value={username}
-                                   onChange={(e) => SetUsername(e.target.value)}
-                            />
+                            Username:
                         </label>
+                        <input type="text"
+                               id="username"
+                               name="username"
+                               value={username}
+                               onChange={(e) => SetUsername(e.target.value)}
+                        />
+
 
                         <label htmlFor="password">
-                            wachtwoord:
-                            <input type="text"
-                                   id="password"
-                                   name="password"
-                                   value={password}
-                                   onChange={(e) => SetPassword(e.target.value)}
-                            />
+                            Password:
                         </label>
+                        <input type="text"
+                               id="password"
+                               name="password"
+                               value={password}
+                               onChange={(e) => SetPassword(e.target.value)}
+                        />
                         {error && <p className="error">Combination of username and password is incorrect</p>}
-
                         <button type="submit"
-                        >Inloggen
+                        >Log in
                         </button>
                         <div>
-                            <p>No Account? Register <NavLink to="/signup" activeClassName="active-link">here!</NavLink></p>
+                            <p>No Account? Register <NavLink to="/signup" activeClassName="active-link">here!</NavLink>
+                            </p>
                         </div>
                     </form>
                 }
@@ -83,4 +87,4 @@ function Login() {
     )
 }
 
-export default Login;
+export default SignIn;

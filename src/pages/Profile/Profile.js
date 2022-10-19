@@ -8,7 +8,6 @@ function Profile(){
         <>
             <div>
                 <p>profile</p>
-                <p><Link to="/">Back to homepage</Link></p>
             </div>
         </>
     )

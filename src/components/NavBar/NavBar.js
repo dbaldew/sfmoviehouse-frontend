@@ -2,7 +2,7 @@ import React, {useContext} from "react";
 import {NavLink, Link} from "react-router-dom";
 import './NavBar.css';
 import {AuthContext} from "../../context/AuthContext";
-import Login from "../Auth/Login/Login";
+import SignIn from "../Auth/SignIn/SignIn";
 
 function NavBar(){
 
@@ -28,7 +28,7 @@ function NavBar(){
                     <h1>SfMovieHouse</h1>
                 </div>
                 <div>
-                    <Login/>
+                    <SignIn/>
                 </div>
             </nav>
         </>

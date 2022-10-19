@@ -1,21 +1,22 @@
 * {
-    padding: 0px;
+    padding: 3px;
     margin: 0px;
 
 }
 .flex-container {
     width: 100vw;
     height: 100vh;
-    background-color: coral;
+    /*background-color: coral;*/
     display: flex;
+    flex-direction: column;
 }
 
 Link:hover, a:visited{
-    color: white;
+    color: crimson;
     text-decoration: underline;
 }
 Link:active{
-    color: white;
+    color: crimson;
     text-decoration: none;
 }
 

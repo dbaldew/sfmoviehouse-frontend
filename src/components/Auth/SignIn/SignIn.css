@@ -1,4 +1,15 @@
-.movie-form {
+.sign-in-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: black solid 1px;
+    width: 200px;
+    height: 200px
+
+}
+.login-form{
     display: flex;
     flex-direction: column;
     font-family: Cambria;
@@ -8,14 +19,15 @@
     align-items: flex-start;
     justify-content: space-evenly;
     padding: 10px;
-    border : black solid 1px;
+    /*border: black solid 1px;*/
     width: 200px;
-    height:200px
-}
+    height: 200px
 
+}
 button {
     font-family: Cambria;
     font-size: 15px;
     color: crimson;
     padding: 5px;
+    margin: 5px;
 }

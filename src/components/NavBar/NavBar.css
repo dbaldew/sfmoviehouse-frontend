@@ -1,6 +1,6 @@
 .nav-container {
-    background-color: crimson;
-    color: white;
+    border: black solid 1px;
+    color: crimson;
     display: flex;
     height: 150px;
     justify-content: space-between;
