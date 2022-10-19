@@ -47,7 +47,7 @@ function SignUp() {
         <>
             <form className="signup-form" onSubmit={handleSubmit}>
                 <label htmlFor="username">
-                    username:
+                    Username:
                     <input type="username"
                            id="username"
                            name="username"
@@ -57,7 +57,7 @@ function SignUp() {
                 </label>
 
                 <label htmlFor="password">
-                    wachtwoord:
+                    Password:
                     <input type="text"
                            id="password"
                            name="password"

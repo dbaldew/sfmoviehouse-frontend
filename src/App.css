@@ -1,9 +1,8 @@
 * {
-    padding: 3px;
+    padding: 0px;
     margin: 0px;
-
 }
-.flex-container {
+.App {
     width: 100vw;
     height: 100vh;
     /*background-color: coral;*/
