@@ -1,10 +1,9 @@
 .sign-in-container{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     padding: 10px;
-    margin: 10px;
+    margin: 5px;
     border: black solid 1px;
     width: 200px;
     height: 200px
@@ -19,7 +18,7 @@
     color: crimson;
     align-items: flex-start;
     justify-content: space-evenly;
-    padding: 10px;
+    padding: 0px;
     /*border: black solid 1px;*/
     width: 200px;
     height: 200px

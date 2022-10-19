@@ -5,12 +5,14 @@ import Home from "./pages/Home/Home";
 import Profile from "./pages/Profile/Profile";
 import Admin from "./pages/Admin/Admin";
 import SignUp from "./pages/SignUp/SignUp";
+import TitleBar from "./components/TitleBar/TitleBar";
 
 function App() {
   return (
       <>
           <div className="App">
             <Router>
+              <TitleBar/>
               <NavBar/>
               <div className="flex-container">
               <Switch>

@@ -2,13 +2,17 @@
     border: black solid 1px;
     color: crimson;
     display: flex;
-    height: 150px;
+    flex-direction: column;
+    padding: 5px;
+    height: 100%;
+    width: 250px;
     justify-content: space-between;
+    margin: 5px;
 }
 
 ul{
     display: flex;
-    flex-direction: row;
+    flex-direction:column;
     align-items: flex-start;
     list-style-type: none;
 }

@@ -77,8 +77,8 @@ function SignIn() {
                         >Log in
                         </button>
                         <div>
-                            <p>No Account? Register <NavLink to="/signup" activeClassName="active-link">here!</NavLink>
-                            </p>
+                            <p>No Account?</p>
+                            <p>Register <NavLink to="/signup" activeClassName="active-link">here!</NavLink></p>
                         </div>
                     </form>
                 }

@@ -4,7 +4,7 @@ import './NavBar.css';
 import {AuthContext} from "../../context/AuthContext";
 import SignIn from "../Auth/SignIn/SignIn";
 
-function NavBar(){
+function NavBar() {
 
     const {isAuth} = useContext(AuthContext)
 
@@ -17,15 +17,17 @@ function NavBar(){
                             <NavLink to="/" exact activeClassName="active-link">Home</NavLink>
                         </li>
                         <li>
-                            {isAuth ? <NavLink to="/profile" activeClassName="active-link">Profile</NavLink>: <NavLink to="/" />}
+                            {isAuth ? <NavLink to="/profile" activeClassName="active-link">Profile</NavLink> :
+                                <NavLink to="/"/>}
                         </li>
                         <li>
-                            {isAuth?<NavLink to="/admin" activeClassName="active-link">Admin</NavLink>: <NavLink to="/"/>}
+                            {isAuth ? <NavLink to="/admin" activeClassName="active-link">Admin</NavLink> :
+                                <NavLink to="/"/>}
                         </li>
                     </ul>
                 </div>
                 <div>
-                    <h1>SfMovieHouse</h1>
+
                 </div>
                 <div>
                     <SignIn/>
@@ -34,4 +36,5 @@ function NavBar(){
         </>
     );
 }
+
 export default NavBar;
