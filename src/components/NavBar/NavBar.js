@@ -26,12 +26,6 @@ function NavBar() {
                         </li>
                     </ul>
                 </div>
-                <div>
-
-                </div>
-                <div>
-                    <SignIn/>
-                </div>
             </nav>
         </>
     );

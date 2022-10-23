@@ -1,8 +1,5 @@
 .signup-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+
     font-family: Cambria;
     font-weight: bolder;
     font-size: 15px;
