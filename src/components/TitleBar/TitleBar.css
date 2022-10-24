@@ -1,8 +1,8 @@
-.title{
+.title-container {
+    background-color: rgba(255, 255, 255, 0);
+    padding: 10px;
+    font-family: "Showcard Gothic";
+    font-size: 30px;
 
-
-
-    border: black solid 1px;
-    margin: 5px;
-    padding: 5px;
 }
+

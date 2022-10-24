@@ -1,9 +1,8 @@
 import React, {useContext, useEffect, useState} from "react";
-import {Link, NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import {AuthContext} from "../../../context/AuthContext";
 import "./SignIn.css"
 import axios from "axios";
-
 
 function SignIn() {
 
@@ -11,7 +10,7 @@ function SignIn() {
     const [password, SetPassword] = useState("");
     const [error, toggleError] = useState(false);
     const {login, logout} = useContext(AuthContext);
-    const {isAuth} = useContext(AuthContext)
+    const {isAuth} = useContext(AuthContext);
 
     const source = axios.CancelToken.source();
 
@@ -34,7 +33,6 @@ function SignIn() {
                 cancelToken: source.token,
             });
             console.log(result.data);
-
             login(result.data.jwt);
         } catch (e) {
             console.error(e);
@@ -61,8 +59,6 @@ function SignIn() {
                                value={username}
                                onChange={(e) => SetUsername(e.target.value)}
                         />
-
-
                         <label htmlFor="password">
                             Password:
                         </label>

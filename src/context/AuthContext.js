@@ -30,7 +30,6 @@ function AuthContextProvider({children}) {
         }
     }, []);
 
-
     function login(JWT) {
 
         localStorage.setItem('token', JWT);
@@ -38,7 +37,7 @@ function AuthContextProvider({children}) {
 
         fetchUserData(decoded.sub, JWT, "/profile")
         console.log("user has logged in");
-        history.push("/profile")
+        // history.push("/profile")
 
     }
 

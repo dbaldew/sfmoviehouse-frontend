@@ -2,24 +2,21 @@
 
 
 
-    border: black solid 1px;
-    color: crimson;
+    background-color: coral;
     padding: 5px;
-    height: 100vh;
-    width: 250px;
-    justify-content: flex-start;
     margin: 5px;
 }
 
 ul{
-    display: flex;
-    flex-direction:column;
-    align-items: flex-start;
+
     list-style-type: none;
 }
 
 li{
     padding:20px;
+    font-family: Consolas;
+    font-weight: bolder;
+
 }
 
 

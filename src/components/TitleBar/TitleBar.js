@@ -4,8 +4,10 @@ import "./TitleBar.css"
 function TitleBar(){
 
     return(
-        <h1 className="title">SfMovieHouse</h1>
-    )
+         <div className="title-container">
+             <h1>SF MOVIEHOUSE</h1>
+         </div>
+    );
 }
 
 export default TitleBar;
