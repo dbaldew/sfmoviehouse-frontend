@@ -4,7 +4,6 @@ label {
     padding-bottom: 10px;
 }
 
-
 textarea {
 
 }
@@ -22,13 +21,15 @@ button {
     grid-template-rows: repeat(4, 1fr);
     background-color: #ffffff;
     border: black solid 1px;
-
+    padding: 10px;
+    margin: 10px;
 
 }
 
 .movie-info {
     grid-column: 1/1;
     grid-row: 1/1;
+    grid-gap: 10px;
     display: flex;
     flex-direction: column;
     border: black solid 1px;
@@ -51,11 +52,9 @@ button {
     padding: 10px;
     margin: 10px;
 
-
 }
 
 .header{
-
     border: black solid 1px;
 
 }
@@ -65,21 +64,27 @@ button {
     padding: 10px;
     margin: 10px;
 
-
 }
 .movie-text{
-
     border: black solid 1px;
+    padding: 10px;
+    margin: 10px;
 
 }
 .update-button{
     grid-column: 1/3;
     grid-row: 3/3;
+    border: black solid 1px;
+    padding: 10px;
+    margin: 10px;
 }
 .movie-list {
     grid-column: 7/12;
     grid-row: 1/12;
     border: black solid 1px;
+    background-color: #ffffff;
+    padding: 10px;
+    margin: 10px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
