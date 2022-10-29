@@ -9,6 +9,7 @@ function Admin() {
     const [category, setCategory] = useState(" ");
     const [description, setDescription] = useState("");
     const [error, toggleError] = useState(false);
+    const [listTitle, setListTitle] = useState("")
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -65,17 +66,17 @@ function Admin() {
                            onChange={(e) => setCategory(e.target.value)}
                     />
                 </div>
-                <div className="movie-form-img">
-                    {/*<label htmlFor="img">*/}
-                    {/*    Select image:*/}
-                    {/*</label>*/}
-                    {/*<input type="file"*/}
-                    {/*       id="img"*/}
-                    {/*       name="img"*/}
-                    {/*       title=""*/}
-                    {/*       accept="image/*"*/}
-                    {/*/>*/}
-                </div>
+                {/*<div className="movie-form-img">*/}
+                {/*    <label htmlFor="img">*/}
+                {/*        Select image:*/}
+                {/*    </label>*/}
+                {/*    <input type="file"*/}
+                {/*           id="img"*/}
+                {/*           name="img"*/}
+                {/*           title=""*/}
+                {/*           accept="image/*"*/}
+                {/*    />*/}
+                {/*</div>*/}
                 <div className="movie-form-desc">
                     <label htmlFor="description">
                         Description:
@@ -83,8 +84,8 @@ function Admin() {
                     <textarea
                         name="description"
                         id="description"
-                        cols="20"
-                        rows="30"
+                        cols="30"
+                        rows="20"
                         value={description}
                         onChange={(e) => setDescription(e.target.value)}
                     ></textarea>
@@ -92,12 +93,38 @@ function Admin() {
                 </div>
                 <div>
                     <button type="submit"
-                    >Create movie
+                    >Update movie list
                     </button>
                 </div>
             </form>
 
-            <form className="all-movies">
+            <form className="movie-list">
+                <div className="movie-list-title-bar">
+                    <div className="movie-list-update">
+                        <button type="submit"
+                        >Edit movie
+                        </button>
+                    </div>
+                    <div className="movie-list-title">
+                        <input type="text"
+                               id="movie-list-title"
+                               name="movie-list-title"
+                               value={listTitle}
+                               // onChange={(e) => setlistTitle(e.target.value)}
+                        />
+                    </div>
+                    <div className="movie-list-edit">
+
+                    </div>
+
+                    <div className="movie-list-delete">
+                        <button type="submit"
+                        >Delete movie
+                        </button>
+                    </div>
+                </div>
+
+
 
             </form>
         </>
