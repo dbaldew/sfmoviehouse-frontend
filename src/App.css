@@ -14,7 +14,7 @@ p{
     min-width: 100vw;
     display: grid;
     grid-template-columns: .2fr 4fr;
-    grid-template-rows: .3fr 3fr .2fr;
+    grid-template-rows: .3fr 3fr .3fr;
     grid-gap:10px;
     grid-template-areas:
     "header header"
@@ -28,10 +28,16 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
+    border: black solid 1px;
+    padding: 10px;
+    margin: 10px;
 }
 
 .nav{
     grid-area: nav;
+    border: black solid 1px;
+    padding: 10px;
+    margin: 10px;
 
 }
 
@@ -41,11 +47,17 @@ p{
     grid-template-columns: repeat(11, 1fr);
     grid-template-rows: repeat(11, 1fr);
     grid-gap:10px;
+    border: black solid 1px;
+    padding: 10px;
+    margin: 10px;
 
 }
 
 .footer{
     grid-area: footer;
+    border: black solid 1px;
+    padding: 10px;
+    margin: 10px;
 
 }
 

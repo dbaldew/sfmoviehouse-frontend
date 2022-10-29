@@ -14,16 +14,22 @@ function Profile(){
 
             </div>
 
-            <div className="wishlist">
-                wishlist
+            <div className="list">
+                <div className="tickets">
+                    tickets
+                </div>
+                <div className="wishlist">
+                    wishlist
+                </div>
             </div>
 
-            <div className="tickets">
-                tickets
-            </div>
-
-            <div className="movie-info">
-                movie-info
+            <div className="profile-movie-info">
+                <div className="profile-poster">
+                    poster
+                </div>
+                <div className="profile-text">
+                    text
+                </div>
             </div>
         </>
     )

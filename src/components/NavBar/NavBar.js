@@ -3,7 +3,6 @@ import {NavLink} from "react-router-dom";
 import './NavBar.css';
 import {AuthContext} from "../../context/AuthContext";
 
-
 function NavBar() {
 
     const {isAuth} = useContext(AuthContext)
