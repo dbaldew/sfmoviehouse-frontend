@@ -103,7 +103,7 @@ function Admin() {
                             name="movie-text"
                             id="movie-text"
                             cols="35"
-                            rows="10"
+                            rows="25"
                             value={description}
                             onChange={(e) => setDescription(e.target.value)}
                         ></textarea>
