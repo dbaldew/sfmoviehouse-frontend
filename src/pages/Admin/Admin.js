@@ -35,72 +35,71 @@ function Admin() {
 
     return (
         <>
-            <div className="admin-container">
-                <form className="movie-form" onSubmit={handleSubmit}>
-                    <div className="movie-form-basic">
-                        <label htmlFor="title">
-                            Title:
-                        </label>
-                        <input type="text"
-                               id="title"
-                               name="title"
-                               value={title}
-                               onChange={(e) => setTitle(e.target.value)}
-                        />
-                        <label htmlFor="year">
-                            Year:
-                        </label>
-                        <input type="text"
-                               id="year"
-                               name="year"
-                               value={year}
-                               onChange={(e) => setYear(e.target.value)}
-                        />
-                        <label htmlFor="category">
-                            Category:
-                        </label>
-                        <input type="text"
-                               id="category"
-                               name="category"
-                               value={category}
-                               onChange={(e) => setCategory(e.target.value)}
-                        />
-                    </div>
-                    <div className="movie-form-img">
-                        {/*<label htmlFor="img">*/}
-                        {/*    Select image:*/}
-                        {/*</label>*/}
-                        {/*<input type="file"*/}
-                        {/*       id="img"*/}
-                        {/*       name="img"*/}
-                        {/*       title=""*/}
-                        {/*       accept="image/*"*/}
-                        {/*/>*/}
-                    </div>
-                    <div className="movie-form-desc">
-                        <label htmlFor="description">
-                            Description:
-                        </label>
-                        <textarea
-                            name="description"
-                            id="description"
-                            cols="30"
-                            rows="30"
-                            value={description}
-                            onChange={(e) => setDescription(e.target.value)}
-                        ></textarea>
-                    </div>
-                    <div>
-                        <button type="submit"
-                        >Create movie
-                        </button>
-                    </div>
-                </form>
+            <form className="movie-form" onSubmit={handleSubmit}>
+                <div className="movie-form-basic">
+                    <label htmlFor="title">
+                        Title:
+                    </label>
+                    <input type="text"
+                           id="title"
+                           name="title"
+                           value={title}
+                           onChange={(e) => setTitle(e.target.value)}
+                    />
+                    <label htmlFor="year">
+                        Year:
+                    </label>
+                    <input type="text"
+                           id="year"
+                           name="year"
+                           value={year}
+                           onChange={(e) => setYear(e.target.value)}
+                    />
+                    <label htmlFor="category">
+                        Category:
+                    </label>
+                    <input type="text"
+                           id="category"
+                           name="category"
+                           value={category}
+                           onChange={(e) => setCategory(e.target.value)}
+                    />
+                </div>
+                <div className="movie-form-img">
+                    {/*<label htmlFor="img">*/}
+                    {/*    Select image:*/}
+                    {/*</label>*/}
+                    {/*<input type="file"*/}
+                    {/*       id="img"*/}
+                    {/*       name="img"*/}
+                    {/*       title=""*/}
+                    {/*       accept="image/*"*/}
+                    {/*/>*/}
+                </div>
+                <div className="movie-form-desc">
+                    <label htmlFor="description">
+                        Description:
+                    </label>
+                    <textarea
+                        name="description"
+                        id="description"
+                        cols="20"
+                        rows="30"
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
+                    ></textarea>
 
-                <form className="all-movies">
+                </div>
+                <div>
+                    <button type="submit"
+                    >Create movie
+                    </button>
+                </div>
+            </form>
 
-                </form>
-            </div>
+            <form className="all-movies">
+
+            </form>
         </>
     )
 }
