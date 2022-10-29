@@ -1,22 +1,66 @@
-.movie-form {
+.admin-container{
+    grid-column-start: 1;
+    grid-column-end: 4;
 
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr;
+    grid-template-rows: 2fr .2fr;
+    grid-gap:10px;
 
+}
 
-    font-family: Cambria;
-    font-weight: bolder;
-    font-size: 15px;
-    color: crimson;
-    align-items: flex-start;
-    justify-content: space-evenly;
+label{
     padding: 10px;
-    border : black solid 1px;
-    width: 200px;
-    height:200px
+}
+
+textarea {
+
 }
 
 button {
     font-family: Cambria;
     font-size: 15px;
-    color: crimson;
     padding: 5px;
+}
+
+.movie-form {
+    grid-column-start: 1;
+    grid-column-end: 4;
+
+    font-family: Consolas;
+    font-weight: bolder;
+    font-size: 15px;
+    padding: 5px;
+    border: black solid 1px;
+
+}
+
+.movie-form-basic{
+    grid-column-start: 1;
+    grid-column-end: 2;
+
+}
+
+.movie-form-img{
+
+}
+
+movie-form-desc
+
+label{
+    padding: 10px;
+}
+
+textarea {
+
+}
+
+button {
+    font-family: Cambria;
+    font-size: 15px;
+    padding: 5px;
+}
+
+.all-movies {
+
 }

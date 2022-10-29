@@ -1,8 +1,6 @@
 .nav-container {
 
-
-
-    background-color: coral;
+    /*background-color: coral;*/
     padding: 5px;
     margin: 5px;
 }
@@ -14,10 +12,25 @@ ul{
 
 li{
     padding:20px;
-    font-family: Consolas;
+    font-family: "Showcard Gothic";
     font-weight: bolder;
+    text-decoration: none;
+    color: black;
 
 }
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:active {
+    text-decoration: underline;
+
+}
+
+
+
 
 
 

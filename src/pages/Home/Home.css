@@ -1,0 +1,72 @@
+.home-container {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    grid-template-rows: repeat(11, 1fr);
+    grid-gap:10px;
+    border: black solid 1px;
+
+}
+
+.home-list-title {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-column-start: 1;
+    grid-row-end: auto;
+    margin: 10px;
+    padding: 20px;
+    border: black solid 1px;
+
+}
+.home-movie-detail {
+    grid-column-start: 4;
+    grid-column-end: 12;
+    grid-row-start:1;
+    grid-row-end: auto;
+
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(11, 1fr);
+    grid-gap: 10px;
+    border: black solid 1px;
+
+}
+.home-movie-detail-poster {
+    grid-column-start: 1;
+    grid-column-end: 4;
+
+
+    border: black solid 1px;
+    padding: 10px;
+    margin: 10px;
+}
+
+
+
+.home-movie-detail-text{
+    grid-column-start: 4;
+    grid-column-end: 6;
+
+    border: black solid 1px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.home-movie-detail-header{
+    padding: 10px;
+
+}
+
+.home-movie-detail-desc {
+    padding: 10px;
+    font-size: 20px;
+
+}
+
+.get-ticket {
+    padding: 10px;
+
+}
+
+.put-on-wishlist {
+    padding: 10px;
+}

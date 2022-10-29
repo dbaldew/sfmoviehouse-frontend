@@ -3,7 +3,7 @@
     font-family: Cambria;
     font-weight: bolder;
     font-size: 15px;
-    color: crimson;
+
     padding: 10px;
     margin: 5px;
     border: black solid 1px;
@@ -14,6 +14,6 @@
 button {
     font-family: Cambria;
     font-size: 15px;
-    color: crimson;
+
     padding: 5px;
 }

@@ -62,7 +62,6 @@ function AuthContextProvider({children}) {
                     Authorization: `Bearer ${token}`,
                 },
             });
-            console.log(result);
 
             toggleIsAuth({
                 ...isAuth,
