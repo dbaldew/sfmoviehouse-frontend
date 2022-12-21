@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import './Admin.css'
 import axios from "axios";
 
@@ -10,7 +10,27 @@ function Admin() {
     const [description, setDescription] = useState("");
     const [error, toggleError] = useState(false);
     const [listTitle, setListTitle] = useState("");
-    const [header, setHeader] = useState("");
+    const [summary, setSummary] = useState("");
+    const [movieData, setMovieData] = useState({});
+
+
+    useEffect((e)=>{
+
+        async function fetchMovies(){
+            try{
+                const result = await axios.get("http://localhost:8080/movies", {
+                    headers:{
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${localStorage.getItem('token')}`,
+                }});
+                console.log(result.data);
+                setMovieData(result.data);
+            } catch (e){
+                console.error(e);
+            }
+        }
+        fetchMovies();
+    },[]);
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -21,6 +41,7 @@ function Admin() {
                 title: title,
                 year: year,
                 category: category,
+                summary:summary,
                 description: description
             }, {
                 headers: {
@@ -35,73 +56,73 @@ function Admin() {
         }
     }
 
+
+
     return (
         <>
             <form className="movie-form" onSubmit={handleSubmit}>
-
                 <div className="movie-info">
                     <label htmlFor="title">
                         Title:
-                    <input type="text"
-                           id="title"
-                           name="title"
-                           value={title}
-                           onChange={(e) => setTitle(e.target.value)}
-                    />
+                        <input type="text"
+                               id="title"
+                               name="title"
+                               value={title}
+                               onChange={(e) => setTitle(e.target.value)}
+                        />
                     </label>
                     <label htmlFor="year">
                         Year:
-                    <input type="text"
-                           id="year"
-                           name="year"
-                           value={year}
-                           onChange={(e) => setYear(e.target.value)}
-                    />
+                        <input type="text"
+                               id="year"
+                               name="year"
+                               value={year}
+                               onChange={(e) => setYear(e.target.value)}
+                        />
                     </label>
                     <label htmlFor="category">
                         Category:
-                    <input type="text"
-                           id="category"
-                           name="category"
-                           value={category}
-                           onChange={(e) => setCategory(e.target.value)}
-                    />
+                        <input type="text"
+                               id="category"
+                               name="category"
+                               value={category}
+                               onChange={(e) => setCategory(e.target.value)}
+                        />
                     </label>
-
                 </div>
 
-                <div className="movie-img">
-                    <label htmlFor="img">
-                        Select image:
-                    </label>
-                    <input type="file"
-                           id="img"
-                           name="img"
-                           title=""
-                           accept="image/*"
-                    />
-                </div>
+                {/*<div className="movie-img">*/}
+                {/*    <label htmlFor="img">*/}
+                {/*        Select image:*/}
+                {/*    </label>*/}
+                {/*    <input type="file"*/}
+                {/*           id="img"*/}
+                {/*           name="img"*/}
+                {/*           title=""*/}
+                {/*           accept="image/*"*/}
+                {/*    />*/}
+                {/*</div>*/}
 
-                <div className="desc-header">
-                    <label htmlFor="header">
-                        Header:
+                <div className="desc-summary">
+                    <label htmlFor="summary">
+                        Summary
                         <textarea
-                            name="header"
-                            id="header"
+                            name="summary"
+                            id="summary"
                             cols="35"
                             rows="10"
-                            value={header}
-                            onChange={(e) => setHeader(e.target.value)}
+                            value={summary}
+                            onChange={(e) => setSummary(e.target.value)}
                         ></textarea>
                     </label>
                 </div>
 
-                <div className="desc-text">
-                    <label htmlFor="movie-text">
+                <div className="desc-description">
+                    <label htmlFor="description">
                         Synopsis:
                         <textarea
-                            name="movie-text"
-                            id="movie-text"
+                            name="description"
+                            id="description"
                             cols="35"
                             rows="25"
                             value={description}
@@ -109,35 +130,34 @@ function Admin() {
                         ></textarea>
                     </label>
                 </div>
+
                 <div className="update-button">
                     <button type="submit"
                     >Update movie list
                     </button>
                 </div>
-
             </form>
 
             <form className="movie-list">
-                <div className="title-bar">
-                    <div className="update">
-                        <button type="submit"
-                        >Edit movie
-                        </button>
+                <ul>
+                    <div className="title-bar">
+                        <div className="update">
+                            <button type="submit"
+                            >Edit movie
+                            </button>
+                        </div>
+                        <div className="title"
+                             id="title"
+                        >{Object.keys(movieData).length>0 && <p>{movieData[0].title}</p>}
+                        </div>
+                        <div className="delete">
+                            <button type="submit"
+                            >Delete movie
+                            </button>
+                        </div>
                     </div>
-                    <div className="title">
-                        <input type="text"
-                               id="movie-list-title"
-                               name="movie-list-title"
-                               value={listTitle}
-                            // onChange={(e) => setlistTitle(e.target.value)}
-                        />
-                    </div>
-                    <div className="delete">
-                        <button type="submit"
-                        >Delete movie
-                        </button>
-                    </div>
-                </div>
+                </ul>
+
             </form>
         </>
     )

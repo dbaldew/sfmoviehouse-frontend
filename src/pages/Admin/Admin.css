@@ -47,7 +47,7 @@ button {
 
 }
 
-.desc-header{
+.desc-summary{
     grid-column: 1/2;
 
     border: black solid 1px;
@@ -56,12 +56,12 @@ button {
 
 }
 
-.header{
+.summary{
     border: black solid 1px;
 
 }
 
-.desc-text{
+.desc-description{
     grid-column: 2/3;
     grid-row: 2/4;
     border: black solid 1px;
@@ -69,7 +69,7 @@ button {
     margin: 10px;
 
 }
-.movie-text{
+.description{
     border: black solid 1px;
     padding: 10px;
     margin: 10px;
@@ -81,7 +81,9 @@ button {
     border: black solid 1px;
     padding: 10px;
     margin: 10px;
+
 }
+
 .movie-list {
     grid-column: 7/12;
     grid-row: 1/12;
@@ -108,6 +110,7 @@ button {
     border: black solid 1px;
     padding: 10px;
     margin: 10px;
+
 }
 
 .title {
@@ -115,10 +118,12 @@ button {
     border: black solid 1px;
     padding: 10px;
     margin: 10px;
+
 }
 
 .delete {
     border: black solid 1px;
     padding: 10px;
     margin: 10px;
+
 }
