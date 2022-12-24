@@ -19,8 +19,7 @@ function Catalog(){
             try{
                 const result = await axios.get("http://localhost:8080/movies", {
                     headers:{
-                        "Content-Type": "application/json",
-                        Authorization: `Bearer ${localStorage.getItem('token')}`,
+                        "Content-Type": "application/json"
                     }});
                 console.log(result.data);
                 setMovieData(result.data);
@@ -44,8 +43,7 @@ function Catalog(){
                 description: description
             }, {
                 headers: {
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${localStorage.getItem('token')}`,
+                    "Content-Type": "application/json"
                 },
             })
             console.log(result.data)
@@ -58,7 +56,7 @@ function Catalog(){
     return (
         <>
             <form className="movie-search-form" onSubmit={handleSubmit}>
-                <div className="movie-info">
+                <div className="movie-details">
                     <label htmlFor="title">
                         Title:
                         <input type="text"
@@ -86,25 +84,25 @@ function Catalog(){
                                onChange={(e) => setCategory(e.target.value)}
                         />
                     </label>
-                    <div className="search-button">
-                        <button type="submit"
-                        >search movie
-                        </button>
-                    </div>
+                </div>
+                <div className="search-button">
+                    <button type="submit"
+                    >search movie
+                    </button>
                 </div>
             </form>
 
             <form className="movie-list">
                 <ul>
                     <div className="title-bar">
+                        <div className="title"
+                             id="title"
+                        >{Object.keys(movieData).length>0 && <p>{movieData[0].title}</p>}
+                        </div>
                         <div className="update">
                             <button type="submit"
                             >Edit movie
                             </button>
-                        </div>
-                        <div className="title"
-                             id="title"
-                        >{Object.keys(movieData).length>0 && <p>{movieData[0].title}</p>}
                         </div>
                         <div className="delete">
                             <button type="submit"

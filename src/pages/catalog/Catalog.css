@@ -14,8 +14,11 @@ button {
 }
 
 .movie-search-form {
-    grid-column: 1/5;
+    grid-column: 1/12;
     grid-row: 1/5;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
     background-color: #ffffff;
     border: black solid 1px;
     padding: 10px;
@@ -23,15 +26,18 @@ button {
 
 }
 
-.movie-info {
+.movie-details {
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
     border: black solid 1px;
     padding: 10px;
     margin: 10px;
 
 }
 .search-button{
+    display: flex;
+    justify-content: center;
 
     border: black solid 1px;
     padding: 10px;
@@ -61,13 +67,6 @@ button {
 
 }
 
-.update {
-    border: black solid 1px;
-    padding: 10px;
-    margin: 10px;
-
-}
-
 .title {
     flex-grow: 10;
     border: black solid 1px;
@@ -75,6 +74,15 @@ button {
     margin: 10px;
 
 }
+
+.update {
+    border: black solid 1px;
+    padding: 10px;
+    margin: 10px;
+
+}
+
+
 
 .delete {
     border: black solid 1px;
