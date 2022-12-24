@@ -23,6 +23,9 @@ function NavBar() {
                             {isAuth ? <NavLink to="/admin" activeClassName="active-link">Admin</NavLink> :
                                 <NavLink to="/"/>}
                         </li>
+                        <li>
+                            <NavLink to="/catalog" exact activeClassName="active-link">Catalog</NavLink>
+                        </li>
                     </ul>
                 </div>
             </nav>

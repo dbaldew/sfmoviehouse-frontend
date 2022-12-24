@@ -1,13 +1,14 @@
 import React from 'react';
 import './App.css';
-import {Switch, Route, Redirect} from 'react-router-dom';
+import {Switch, Route} from 'react-router-dom';
 import NavBar from "./components/NavBar/NavBar";
-import Home from "./pages/Home/Home";
-import Profile from "./pages/Profile/Profile";
-import Admin from "./pages/Admin/Admin";
+import Home from "./pages/home/Home";
+import Profile from "./pages/profile/Profile";
+import Admin from "./pages/admin/Admin";
 import TitleBar from "./components/TitleBar/TitleBar";
 import Footer from "./components/Footer/Footer";
 import SignIn from "./components/Auth/SignIn/SignIn";
+import Catalog from "./pages/catalog/Catalog";
 
 
 function App() {
@@ -31,6 +32,9 @@ function App() {
                     </Route>
                     <Route path="/admin">
                         <Admin/>
+                    </Route>
+                    <Route path="/catalog">
+                        <Catalog/>
                     </Route>
                 </Switch>
             </div>
