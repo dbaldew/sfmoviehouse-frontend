@@ -16,15 +16,13 @@ function NavBar() {
                             <NavLink to="/" exact activeClassName="active-link">Home</NavLink>
                         </li>
                         <li>
-                            {isAuth ? <NavLink to="/profile" activeClassName="active-link">Profile</NavLink> :
-                                <NavLink to="/"/>}
-                        </li>
-                        <li>
-                            {isAuth ? <NavLink to="/admin" activeClassName="active-link">Admin</NavLink> :
-                                <NavLink to="/"/>}
-                        </li>
-                        <li>
                             <NavLink to="/catalog" exact activeClassName="active-link">Catalog</NavLink>
+                        </li>
+                        <li>
+                           <NavLink to="/profile" activeClassName="active-link">Profile</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/admin" activeClassName="active-link">Admin</NavLink>
                         </li>
                     </ul>
                 </div>

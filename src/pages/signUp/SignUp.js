@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from "react";
 import './SignUp.css';
 import axios from "axios";
+import Profile from "../../components/profile/Profile";
 
 
 function SignUp() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [registered, setRegistered] = useState(false);
+    const [isRegistered, setIsRegistered] = useState(false);
 
     const [error, toggleError] = useState(false);
     const [loading, toggleLoading] = useState(false);
@@ -33,18 +34,20 @@ function SignUp() {
             }, {
                 cancelToken: source.token,
             });
-            setRegistered(true);
+            setIsRegistered(true);
 
         } catch (e) {
             console.error(e);
             toggleError(true)
-            setRegistered(false);
+            setIsRegistered(false);
         }
         toggleLoading(false);
     }
 
     return (
         <>
+            <p>No account?</p>
+            <p>Register now!</p>
             <form className="signup-form" onSubmit={handleSubmit}>
                 <label htmlFor="username">
                     Username:
@@ -70,6 +73,11 @@ function SignUp() {
                 >Register
                 </button>
             </form>
+            {isRegistered?
+                <p>Woohoo! Registration successful! You can now login to view your profile</p>
+            :
+                <p></p>
+            }
         </>
     )
 }

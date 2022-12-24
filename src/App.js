@@ -3,7 +3,7 @@ import './App.css';
 import {Switch, Route} from 'react-router-dom';
 import NavBar from "./components/NavBar/NavBar";
 import Home from "./pages/home/Home";
-import Profile from "./pages/profile/Profile";
+import Profile from "./components/profile/Profile";
 import Admin from "./pages/admin/Admin";
 import TitleBar from "./components/TitleBar/TitleBar";
 import Footer from "./components/Footer/Footer";
@@ -27,14 +27,14 @@ function App() {
                     <Route exact path="/">
                         <Home/>
                     </Route>
+                    <Route path="/catalog">
+                        < Catalog/>
+                    </Route>
                     <Route path="/profile">
                         <Profile/>
                     </Route>
                     <Route path="/admin">
                         <Admin/>
-                    </Route>
-                    <Route path="/catalog">
-                        <Catalog/>
                     </Route>
                 </Switch>
             </div>
