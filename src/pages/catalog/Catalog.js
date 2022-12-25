@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from "react";
 import './Catalog.css'
 import axios from "axios";
+import TitleBar from "../../components/TitleBar/TitleBar";
+import MovieBar from "../../components/movieBar/MovieBar";
 
 function Catalog(){
     const [title, setTitle] = useState("");
@@ -95,36 +97,11 @@ function Catalog(){
 
             <form className="movie-list">
                 <ul>
-                    5{Object.keys(movieData).map(item => {
-                        return(
-                            <div className="title-bar">
-                                <div className="title"
-                                     id="title"
-                                >{Object.keys(movieData).length>0 && <p>{movieData[0].title}</p>}
-                                </div>
-                                <div className="year"
-                                     id="year"
-                                >{Object.keys(movieData).length>0 && <p>{movieData[0].year}</p>}
-                                </div>
-                                <div className="category"
-                                     id="category"
-                                >{Object.keys(movieData).length>0 && <p>{movieData[0].category}</p>}
-                                </div>
-                                <div className="update">
-                                    <button type="submit"
-                                    >Edit movie
-                                    </button>
-                                </div>
-                                <div className="delete">
-                                    <button type="submit"
-                                    >Delete movie
-                                    </button>
-                                </div>
-                            </div>
-                        )
-                    })}
-
-
+                    <MovieBar
+                        title={movieData.title}
+                        year = {movieData.year}
+                        category = {movieData.category}
+                    />
                 </ul>
             </form>
         </>
