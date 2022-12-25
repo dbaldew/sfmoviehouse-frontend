@@ -74,6 +74,21 @@ button {
     margin: 10px;
 
 }
+.year {
+    flex-grow: 10;
+    border: black solid 1px;
+    padding: 10px;
+    margin: 10px;
+
+}
+
+.category {
+    flex-grow: 10;
+    border: black solid 1px;
+    padding: 10px;
+    margin: 10px;
+
+}
 
 .update {
     border: black solid 1px;
@@ -81,8 +96,6 @@ button {
     margin: 10px;
 
 }
-
-
 
 .delete {
     border: black solid 1px;

@@ -30,12 +30,12 @@ function Catalog(){
         fetchMovies();
     },[]);
 
-    async function handleSubmit(e) {
+    async function searchMovie(e) {
         e.preventDefault();
         toggleError(false);
 
         try {
-            const result = await axios.post("http://localhost:8080/movies", {
+            const result = await axios.get("http://localhost:8080/movies", {
                 title: title,
                 year: year,
                 category: category,
@@ -55,7 +55,7 @@ function Catalog(){
 
     return (
         <>
-            <form className="movie-search-form" onSubmit={handleSubmit}>
+            <form className="movie-search-form" onSubmit={searchMovie}>
                 <div className="movie-details">
                     <label htmlFor="title">
                         Title:
@@ -98,6 +98,14 @@ function Catalog(){
                         <div className="title"
                              id="title"
                         >{Object.keys(movieData).length>0 && <p>{movieData[0].title}</p>}
+                        </div>
+                        <div className="year"
+                             id="year"
+                        >{Object.keys(movieData).length>0 && <p>{movieData[0].year}</p>}
+                        </div>
+                        <div className="category"
+                             id="category"
+                        >{Object.keys(movieData).length>0 && <p>{movieData[0].category}</p>}
                         </div>
                         <div className="update">
                             <button type="submit"
