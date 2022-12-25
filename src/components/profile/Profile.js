@@ -5,7 +5,11 @@ import SignUp from "../../pages/signUp/SignUp";
 import {AuthContext} from "../../context/AuthContext";
 
 function Profile(){
-    const {isAuth} = useContext(AuthContext);
+    const {isAuth, user} = useContext(AuthContext);
+
+    function getUsername(){
+        return user.username;
+    }
 
     return(
         <>
@@ -15,6 +19,9 @@ function Profile(){
                 <div>
                     <div className="avatar">
                         avatar
+                    </div>
+                    <div className="welcome">
+                        <p>Hello {getUsername()} </p>
                     </div>
 
                     <div className="userinfo">

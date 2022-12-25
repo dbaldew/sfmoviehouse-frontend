@@ -19,7 +19,8 @@ function Catalog(){
             try{
                 const result = await axios.get("http://localhost:8080/movies", {
                     headers:{
-                        "Content-Type": "application/json"
+                        "Content-Type": "application/json",
+                        // Authorization: `Bearer ${localStorage.getItem('token')}`,
                     }});
                 console.log(result.data);
                 setMovieData(result.data);
@@ -94,30 +95,36 @@ function Catalog(){
 
             <form className="movie-list">
                 <ul>
-                    <div className="title-bar">
-                        <div className="title"
-                             id="title"
-                        >{Object.keys(movieData).length>0 && <p>{movieData[0].title}</p>}
-                        </div>
-                        <div className="year"
-                             id="year"
-                        >{Object.keys(movieData).length>0 && <p>{movieData[0].year}</p>}
-                        </div>
-                        <div className="category"
-                             id="category"
-                        >{Object.keys(movieData).length>0 && <p>{movieData[0].category}</p>}
-                        </div>
-                        <div className="update">
-                            <button type="submit"
-                            >Edit movie
-                            </button>
-                        </div>
-                        <div className="delete">
-                            <button type="submit"
-                            >Delete movie
-                            </button>
-                        </div>
-                    </div>
+                    5{Object.keys(movieData).map(item => {
+                        return(
+                            <div className="title-bar">
+                                <div className="title"
+                                     id="title"
+                                >{Object.keys(movieData).length>0 && <p>{movieData[0].title}</p>}
+                                </div>
+                                <div className="year"
+                                     id="year"
+                                >{Object.keys(movieData).length>0 && <p>{movieData[0].year}</p>}
+                                </div>
+                                <div className="category"
+                                     id="category"
+                                >{Object.keys(movieData).length>0 && <p>{movieData[0].category}</p>}
+                                </div>
+                                <div className="update">
+                                    <button type="submit"
+                                    >Edit movie
+                                    </button>
+                                </div>
+                                <div className="delete">
+                                    <button type="submit"
+                                    >Delete movie
+                                    </button>
+                                </div>
+                            </div>
+                        )
+                    })}
+
+
                 </ul>
             </form>
         </>
