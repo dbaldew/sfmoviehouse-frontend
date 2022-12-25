@@ -6,7 +6,7 @@ function Footer(){
     return(
         <>
             <div >
-                <p>footer</p>
+                <p></p>
             </div>
         </>
     );

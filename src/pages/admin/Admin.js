@@ -18,7 +18,7 @@ function Admin() {
 
         async function fetchMovies(){
             try{
-                const result = await axios.get("http://localhost:8080/movies", {
+                const result = await axios.get( "http://localhost:8080/movies", {
                     headers:{
                     "Content-Type": "application/json",
                     Authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -32,7 +32,7 @@ function Admin() {
         fetchMovies();
     },[]);
 
-    async function handleSubmit(e) {
+    async function updateMovie(e) {
         e.preventDefault();
         toggleError(false);
 
@@ -60,7 +60,7 @@ function Admin() {
 
     return (
         <>
-            <form className="movie-form" onSubmit={handleSubmit}>
+            <form className="movie-form" onSubmit={updateMovie}>
                 <div className="movie-info">
                     <label htmlFor="title">
                         Title:

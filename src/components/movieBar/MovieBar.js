@@ -2,17 +2,23 @@ import React from "react";
 import './Moviebar.css'
 
 
-function MovieBar({title,year, category}){
+function MovieBar(props){
+
+    const{movieID, title, year, category} = props;
 
     return(
-        <div className="title-bar">
+        <div className="movie-bar">
+            <div className="movieID"
+                 id="movieID"
+            ><p>{movieID}</p>
+            </div>
             <div className="title"
                  id="title"
-            ><p>{title}</p>}
+            ><p>{title}</p>
             </div>
             <div className="year"
                  id="year"
-            ><p>{year}</p>}
+            ><p>{year}</p>
             </div>
             <div className="category"
                  id="category"

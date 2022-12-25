@@ -15,7 +15,7 @@ button {
 
 .movie-search-form {
     grid-column: 1/12;
-    grid-row: 1/5;
+    grid-row: 1/2;
     display: flex;
     flex-direction: column;
     align-content: space-around;
@@ -23,6 +23,7 @@ button {
     border: black solid 1px;
     padding: 10px;
     margin: 10px;
+
 
 }
 
@@ -33,6 +34,7 @@ button {
     border: black solid 1px;
     padding: 10px;
     margin: 10px;
+
 
 }
 .search-button{
@@ -45,16 +47,4 @@ button {
 
 }
 
-.movie-list {
-    grid-column: 1/12;
-    grid-row: 5/12;
-    border: black solid 1px;
-    background-color: #ffffff;
-    padding: 10px;
-    margin: 10px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-
-}
 

@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from "react";
 import './Catalog.css'
 import axios from "axios";
-import TitleBar from "../../components/TitleBar/TitleBar";
 import MovieBar from "../../components/movieBar/MovieBar";
 
-function Catalog(){
+function Catalog() {
+    const [movieID, setMovieID] = useState("")
     const [title, setTitle] = useState("");
     const [year, setYear] = useState(" ");
     const [category, setCategory] = useState(" ");
@@ -13,36 +13,42 @@ function Catalog(){
     const [listTitle, setListTitle] = useState("");
     const [summary, setSummary] = useState("");
     const [movieData, setMovieData] = useState({});
+    const [movies, setMovies] = useState({});
 
 
-    useEffect((e)=>{
+    useEffect((e) => {
 
-        async function fetchMovies(){
-            try{
-                const result = await axios.get("http://localhost:8080/movies", {
-                    headers:{
+        async function fetchMovies() {
+            try {
+                const result = await axios.get(`http://localhost:8080/movies`, {
+                    headers: {
                         "Content-Type": "application/json",
                         // Authorization: `Bearer ${localStorage.getItem('token')}`,
-                    }});
+                    }
+                });
                 console.log(result.data);
                 setMovieData(result.data);
-            } catch (e){
+            } catch (e) {
                 console.error(e);
             }
         }
+
         fetchMovies();
-    },[]);
+    }, []);
+
+
 
     async function searchMovie(e) {
         e.preventDefault();
         toggleError(false);
 
         try {
-            const result = await axios.get("http://localhost:8080/movies", {
+            const result = await axios.get(`http://localhost:8080/movies/`, {
+                movieID: movieID,
                 title: title,
                 year: year,
                 category: category,
-                summary:summary,
+                summary: summary,
                 description: description
             }, {
                 headers: {
@@ -95,16 +101,27 @@ function Catalog(){
                 </div>
             </form>
 
-            <form className="movie-list">
-                <ul>
-                    <MovieBar
-                        title={movieData.title}
-                        year = {movieData.year}
-                        category = {movieData.category}
-                    />
-                </ul>
-            </form>
+            <div className="movie-list">
+            {Object.keys(movieData).length > 0 &&
+                    <ul>
+                        {movieData.map(movie=>{
+                            const {movieID, title, year, category}=movie;
+                        return(
+                        <li>
+                        <MovieBar
+                        movieID={movieID}
+                        title={title}
+                        year={year}
+                        category={category}
+                        />
+                        </li>
+                        );
+                    })};
+                    </ul>
+            }
+            </div>
         </>
     )
 }
+
 export default Catalog
