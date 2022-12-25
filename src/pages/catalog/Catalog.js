@@ -107,7 +107,7 @@ function Catalog() {
                         {movieData.map(movie=>{
                             const {movieID, title, year, category}=movie;
                         return(
-                        <li>
+                        <li key={movieID}>
                         <MovieBar
                         movieID={movieID}
                         title={title}
