@@ -1,32 +1,89 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import './Home.css'
-import MovieCard from "../../components/MovieCard/MovieCard";
+import MovieCard from "../../components/movieCard/MovieCard";
+import TitleCard from "../../components/titlecard/TitleCard";
+
+import axios from "axios";
 
 function Home() {
+
+    const [movieData, setMovieData] = useState({})
+    const [card, setCard] = useState("1")
+    const [movieQuery, setMovieQuery] = useState("1")
+
+    useEffect((e)=>{
+
+        async function fetchMovies(){
+            try{
+                const result = await axios.get( "http://localhost:8080/movies", {
+                    headers:{
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${localStorage.getItem('token')}`,
+                    }});
+                console.log(result.data);
+                setMovieData(result.data);
+            } catch (e){
+                console.error(e);
+            }
+        }
+        fetchMovies();
+    },[]);
+
+    useEffect((e) => {
+
+        async function fetchMovie() {
+            try {
+                const result = await axios.get(`http://localhost:8080/movies/id/${movieQuery}`, {
+                    headers: {
+                        "Content-Type": "application/json",
+                        // Authorization: `Bearer ${localStorage.getItem('token')}`,
+                    }
+                });
+                console.log(result.data);
+                setCard(result.data);
+            } catch (e) {
+                console.error(e);
+            }
+        }
+
+        fetchMovie();
+    }, [movieQuery]);
+
+
+
+
+
     return (
         <>
             <div className="home-list-title-container">
-                <p className="home-list-title-item">
-                    Akira
-                </p>
+                {Object.keys(movieData).length > 0 &&
+                    <ul>
+                        {movieData.map(movie=>{
+                            const {movieID, title}=movie;
+                            return(
+                                <li key={movieID}>
+                                    <TitleCard
+                                        title={title}
+                                        movieID={movieID}
+                                       setMovieQuery = {setMovieQuery}
+                                    />
+                                </li>
+                            );
+                        })};
+                    </ul>
+                }
             </div>
 
             <div className="home-movie-detail-container">
                 <MovieCard
-                    img = "../../assets/img/akira.jpg"
-                    alt = "akira-movie-poster"
-                    header = "VOICES OF: Mitsuo Iwara, Nozomu Sasaki, Mami Koyama, Taro Ishida, Jimmy Flanders, Drew
-                    Thomas, Barbara Larsen, Lewis Lemay, Stanley Gurd Jr.
-
-                    1988, 124 Minutes, Directed by: Katsuhiro Otomo"
-                    desc = "Set in 2019, the film richly imagines the new metropolis of Neo-Tokyo. Two disaffected
-                    orphan teenagers--slight, resentful Tetsuo and confident, breezy Kanada--run with a biker
-                    gang, but trouble grows when Tetsuo start to resent the way Kanada always has to rescue him.
-                    Meanwhile, a group of scientists, military men, and politicians wonder what to do with a
-                    collection of withered children who possess enormous psychic powers, especially the
-                    mysterious, rarely seen Akira, whose awakening might well have caused the end of the old
-                    world. Tetsuo is visited by the children, who trigger the growth of psychic and physical
-                    powers that might make him a superman or a supermonster."
+                    img="img"
+                    alt="poster"
+                    title = {card.title}
+                    summary={card.summary}
+                    category={card.category}
+                    year={card.year}
+                    description={card.description}
+                    setCard={setCard}
                 />
             </div>
         </>

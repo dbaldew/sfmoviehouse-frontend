@@ -36,8 +36,6 @@ function Catalog() {
         fetchMovies();
     }, []);
 
-
-
     async function searchMovie(e) {
         e.preventDefault();
         toggleError(false);

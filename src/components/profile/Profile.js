@@ -2,14 +2,12 @@ import React, {useContext} from "react";
 import './Profile.css'
 import SignUp from "../../pages/signUp/SignUp";
 
+
 import {AuthContext} from "../../context/AuthContext";
 
 function Profile(){
     const {isAuth, user} = useContext(AuthContext);
 
-    function getUsername(){
-        return user.username;
-    }
 
     return(
         <>
@@ -21,7 +19,7 @@ function Profile(){
                         avatar
                     </div>
                     <div className="welcome">
-                        <p>Hello {getUsername()} </p>
+                        <p>  Hello {user.username} </p>
                     </div>
 
                     <div className="userinfo">

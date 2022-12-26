@@ -1,0 +1,20 @@
+
+.home-list-title-item-box {
+
+    display: flex;
+    justify-content: center;
+    padding: 1px;
+
+}
+
+.home-list-title-button{
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: crimson;
+    color: white;
+
+}

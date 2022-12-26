@@ -47,4 +47,46 @@ button {
 
 }
 
+.movie-list {
+    grid-column: 1/12;
+    grid-row: 2/12;
+    border: black solid 1px;
+    background-color: #ffffff;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
 
+}
+
+.title-bar {
+    border: black solid 1px;
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.update {
+    border: black solid 1px;
+    padding: 10px;
+    margin: 10px;
+
+}
+
+.title {
+    flex-grow: 10;
+    border: black solid 1px;
+    padding: 10px;
+    margin: 10px;
+
+}
+
+.delete {
+    border: black solid 1px;
+    padding: 10px;
+    margin: 10px;
+
+}

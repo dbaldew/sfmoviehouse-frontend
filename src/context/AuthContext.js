@@ -13,6 +13,7 @@ function AuthContextProvider({children}) {
         user: null,
         status: 'pending',
     });
+
     const history = useHistory();
 
     useEffect(()=>{
@@ -85,7 +86,6 @@ function AuthContextProvider({children}) {
                 status: 'done',
             });
         }
-
     }
 
     const contextData = {
