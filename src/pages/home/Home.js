@@ -49,10 +49,6 @@ function Home() {
         fetchMovie();
     }, [movieQuery]);
 
-
-
-
-
     return (
         <>
             <div className="home-list-title-container">

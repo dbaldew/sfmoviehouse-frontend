@@ -1,7 +1,11 @@
 .title-container {
 
-    font-family: "Showcard Gothic";
+    font-family: "Showcard Gothic", serif;
     font-size: 30px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 
 }

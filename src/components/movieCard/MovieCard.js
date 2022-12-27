@@ -1,4 +1,5 @@
 import React from "react";
+import './MovieCard.css'
 
 function MovieCard({img,alt, title, summary, category, year, description}) {
 

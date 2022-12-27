@@ -12,6 +12,10 @@ p {
     margin: 10px;
     padding: 20px;
     border: black solid 1px;
+    max-height: 510px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
 
 }
 

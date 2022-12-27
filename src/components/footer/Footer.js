@@ -5,8 +5,8 @@ function Footer(){
 
     return(
         <>
-            <div >
-                <p></p>
+            <div  className="footer-container" >
+                <h6>The best place for Science Fiction - Fantasy - Superheroes and more!!! </h6>
             </div>
         </>
     );
