@@ -4,6 +4,11 @@
 
 }
 
+textarea{
+    overflow-y: scroll;
+
+}
+
 p{
     font-family: Consolas;
 

@@ -1,39 +1,30 @@
 label {
     display: flex;
     flex-direction: column;
-    padding-bottom: 10px;
+
 }
 
 textarea {
+    resize: none;
+    overflow-y: scroll;
 
-}
-
-button {
-    font-size: 15px;
-    padding: 5px;
 }
 
 .movie-form {
-    grid-column: 1/12;
-    grid-row: 1/4;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+
+    display: flex;
+
     background-color: #ffffff;
     border: black solid 1px;
     padding: 10px;
     margin: 10px;
-    min-height: 10px;
-
+    max-height: 250px;
 
 }
 
 .movie-info {
-    grid-column: 1/1;
-    grid-row: 1/1;
-    grid-gap: 10px;
-    display: flex;
-    flex-direction: column;
+
+
     border: black solid 1px;
     padding: 10px;
     margin: 10px;
@@ -41,16 +32,6 @@ button {
 }
 
 .movie-img {
-    grid-column: 2/3;
-    grid-row: 1/1;
-    border: black solid 1px;
-    padding: 10px;
-    margin: 10px;
-
-}
-
-.desc-summary{
-    grid-column: 1/2;
 
     border: black solid 1px;
     padding: 10px;
@@ -59,13 +40,16 @@ button {
 }
 
 .desc-summary{
+
     border: black solid 1px;
+    padding: 10px;
+    margin: 10px;
 
 }
+
 
 .desc-description{
-    grid-column: 2/3;
-    grid-row: 2/4;
+
     border: black solid 1px;
     padding: 10px;
     margin: 10px;
@@ -78,8 +62,8 @@ button {
 
 }
 .update-button{
-    grid-column: 1/1;
-    grid-row: 3/3;
+    display: flex;
+
     border: black solid 1px;
     padding: 10px;
     margin: 10px;

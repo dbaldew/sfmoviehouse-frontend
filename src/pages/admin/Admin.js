@@ -122,7 +122,7 @@ function Admin() {
                             name="description"
                             id="description"
                             cols="35"
-                            rows="25"
+                            rows="10"
                             value={description}
                             onChange={(e) => setDescription(e.target.value)}
                         ></textarea>
