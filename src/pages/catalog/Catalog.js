@@ -73,8 +73,13 @@ function Catalog() {
                                onChange={(e) => setTitle(e.target.value)}
                         />
                     </label>
+                    <div className="search-button">
+                        <button type="submit"
+                        >search movie
+                        </button>
+                    </div>
                     <label htmlFor="year">
-                        Year:
+                        Filter by year:
                         <input type="text"
                                id="year"
                                name="year"
@@ -83,7 +88,7 @@ function Catalog() {
                         />
                     </label>
                     <label htmlFor="category">
-                        Category:
+                        Filter by category:
                         <input type="text"
                                id="category"
                                name="category"
@@ -91,33 +96,30 @@ function Catalog() {
                                onChange={(e) => setCategory(e.target.value)}
                         />
                     </label>
+
                 </div>
-                <div className="search-button">
-                    <button type="submit"
-                    >search movie
-                    </button>
-                </div>
+
             </form>
 
-            <div className="movie-list">
             {Object.keys(movieData).length > 0 &&
+                <div className="movie-list">
                     <ul>
-                        {movieData.map(movie=>{
-                            const {movieID, title, year, category}=movie;
-                        return(
-                        <li key={movieID}>
-                        <MovieBar
-                        movieID={movieID}
-                        title={title}
-                        year={year}
-                        category={category}
-                        />
-                        </li>
-                        );
-                    })};
+                        {movieData.map(movie => {
+                            const {movieID, title, year, category} = movie;
+                            return (
+                                <li key={movieID}>
+                                    <MovieBar
+                                        movieID={movieID}
+                                        title={title}
+                                        year={year}
+                                        category={category}
+                                    />
+                                </li>
+                            );
+                        })};
                     </ul>
+                </div>
             }
-            </div>
         </>
     )
 }

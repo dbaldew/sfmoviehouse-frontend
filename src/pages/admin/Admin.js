@@ -56,8 +56,6 @@ function Admin() {
         }
     }
 
-
-
     return (
         <>
             <form className="movie-form" onSubmit={updateMovie}>
@@ -136,27 +134,6 @@ function Admin() {
                     >Update movie list
                     </button>
                 </div>
-            </form>
-
-            <form className="movie-list">
-                <ul>
-                    <div className="title-bar">
-                        <div className="update">
-                            <button type="submit"
-                            >Edit movie
-                            </button>
-                        </div>
-                        <div className="title"
-                             id="title"
-                        >{Object.keys(movieData).length>0 && <p>{movieData[0].title}</p>}
-                        </div>
-                        <div className="delete">
-                            <button type="submit"
-                            >Delete movie
-                            </button>
-                        </div>
-                    </div>
-                </ul>
             </form>
         </>
     )

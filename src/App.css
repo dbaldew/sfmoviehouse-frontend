@@ -51,13 +51,13 @@ p{
 .page{
     grid-area: page;
     display: grid;
-    grid-template-columns: repeat(11, 1fr);
-    grid-template-rows: repeat(11, 1fr);
+    /*grid-template-columns: repeat(11, 1fr);*/
+    /*grid-template-rows: repeat(11, 1fr);*/
     grid-gap:10px;
     border: black solid 1px;
     padding: 10px;
     margin: 10px;
-    max-height: fit-content;
+    min-height: 580px;
 
 
 
