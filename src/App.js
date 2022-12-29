@@ -9,9 +9,32 @@ import TitleBar from "./components/titleBar/TitleBar";
 import Footer from "./components/footer/Footer";
 import SignIn from "./components/Auth/SignIn/SignIn";
 import Catalog from "./pages/catalog/Catalog";
+import {useEffect, useState} from 'react';
+import axios from "axios";
 
 
 function App() {
+
+    const [movieData, setMovieData] = useState({})
+
+    useEffect((e)=>{
+
+        async function fetchMovies(){
+            try{
+                const result = await axios.get( "http://localhost:8080/movies", {
+                    headers:{
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${localStorage.getItem('token')}`,
+                    }});
+                console.log(result.data);
+                setMovieData(result.data);
+            } catch (e){
+                console.error(e);
+            }
+        }
+        fetchMovies();
+    },[]);
+
 
     return (
         <div className="App">
@@ -27,7 +50,9 @@ function App() {
             <div className="page">
                 <Switch>
                     <Route exact path="/">
-                        <Home/>
+                        <Home
+                            movieData = {movieData}
+                        />
                     </Route>
                     <Route path="/catalog">
                         <Catalog/>
