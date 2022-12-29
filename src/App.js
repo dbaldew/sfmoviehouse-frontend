@@ -54,9 +54,12 @@ function App() {
                             movieData = {movieData}
                         />
                     </Route>
-                    <Route path="/catalog">
-                        <Catalog/>
-                    </Route>
+                    {/*<Route path="/catalog">*/}
+                    {/*    <Catalog*/}
+                    {/*        movieData = {movieData}*/}
+
+                    {/*    />*/}
+                    {/*</Route>*/}
                     <Route path="/profile">
                         <Profile/>
                     </Route>

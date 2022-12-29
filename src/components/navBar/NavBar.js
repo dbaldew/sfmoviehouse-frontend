@@ -15,9 +15,9 @@ function NavBar() {
                         <li>
                             <NavLink to="/" exact activeClassName="active-link">Home</NavLink>
                         </li>
-                        <li>
-                            <NavLink to="/catalog" exact activeClassName="active-link">Catalog</NavLink>
-                        </li>
+                        {/*<li>*/}
+                        {/*    <NavLink to="/catalog" exact activeClassName="active-link">Catalog</NavLink>*/}
+                        {/*</li>*/}
                         <li>
                            <NavLink to="/profile" activeClassName="active-link">Profile</NavLink>
                         </li>
