@@ -1,7 +1,7 @@
-import React, {useEffect, useState, useContext} from "react";
+import React, {useEffect, useState} from "react";
 import './Admin.css'
 import axios from "axios";
-import {MovieDataContext} from "../../context/MovieDataContext";
+
 
 function Admin() {
 
@@ -12,26 +12,25 @@ function Admin() {
     const [error, toggleError] = useState(false);
     const [listTitle, setListTitle] = useState("");
     const [summary, setSummary] = useState("");
-    // const [movieData, setMovieData] = useState({});
-    const {movieData, setMovieData} = useContext(MovieDataContext);
+    const [movieData, setMovieData] = useState({});
 
-    // useEffect((e)=>{
-    //
-    //     async function fetchMovies(){
-    //         try{
-    //             const result = await axios.get( "http://localhost:8080/movies", {
-    //                 headers:{
-    //                 "Content-Type": "application/json",
-    //                 Authorization: `Bearer ${localStorage.getItem('token')}`,
-    //             }});
-    //             console.log(result.data);
-    //             setMovieData(result.data);
-    //         } catch (e){
-    //             console.error(e);
-    //         }
-    //     }
-    //     fetchMovies();
-    // },[]);
+    useEffect((e)=>{
+
+        async function fetchMovies(){
+            try{
+                const result = await axios.get( "http://localhost:8080/movies", {
+                    headers:{
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${localStorage.getItem('token')}`,
+                }});
+                console.log(result.data);
+                setMovieData(result.data);
+            } catch (e){
+                console.error(e);
+            }
+        }
+        fetchMovies();
+    },[]);
 
     async function updateMovie(e) {
         e.preventDefault();
@@ -51,6 +50,7 @@ function Admin() {
                 },
             })
             console.log(result.data)
+            setMovieData(result.data)
         } catch (e) {
             console.error(e);
             toggleError(true);

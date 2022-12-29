@@ -1,8 +1,8 @@
-import React, {useEffect, useState, useContext} from "react";
+import React, {useEffect, useState} from "react";
 import './Catalog.css'
 import axios from "axios";
 import MovieBar from "../../components/movieBar/MovieBar";
-import {MovieDataContext} from "../../context/MovieDataContext";
+
 
 function Catalog() {
     const [movieID, setMovieID] = useState("")
@@ -15,27 +15,26 @@ function Catalog() {
     const [summary, setSummary] = useState("");
     const [movieData, setMovieData] = useState({});
     const [movies, setMovies] = useState({});
-    // const {movieData, setMovieData} = useContext(MovieDataContext);
 
-    useEffect((e) => {
 
-        async function fetchMovies() {
-            try {
-                const result = await axios.get(`http://localhost:8080/movies`, {
-                    headers: {
+
+    useEffect((e)=>{
+
+        async function fetchMovies(){
+            try{
+                const result = await axios.get( "http://localhost:8080/movies", {
+                    headers:{
                         "Content-Type": "application/json",
-                        // Authorization: `Bearer ${localStorage.getItem('token')}`,
-                    }
-                });
+                        Authorization: `Bearer ${localStorage.getItem('token')}`,
+                    }});
                 console.log(result.data);
                 setMovieData(result.data);
-            } catch (e) {
+            } catch (e){
                 console.error(e);
             }
         }
-
         fetchMovies();
-    }, []);
+    },[]);
 
     async function searchMovie(e) {
         e.preventDefault();

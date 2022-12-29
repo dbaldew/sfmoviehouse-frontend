@@ -13,6 +13,24 @@ function Home() {
     const [movieQuery, setMovieQuery] = useState("1")
     const {movieData, setMovieData} = useContext(MovieDataContext);
 
+    useEffect((e)=>{
+
+        async function fetchMovies(){
+            try{
+                const result = await axios.get( "http://localhost:8080/movies", {
+                    headers:{
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${localStorage.getItem('token')}`,
+                    }});
+                console.log(result.data);
+                setMovieData(result.data);
+            } catch (e){
+                console.error(e);
+            }
+        }
+        fetchMovies();
+    },[]);
+
     useEffect((e) => {
 
         async function fetchMovie() {
