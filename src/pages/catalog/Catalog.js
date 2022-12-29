@@ -1,7 +1,8 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useContext} from "react";
 import './Catalog.css'
 import axios from "axios";
 import MovieBar from "../../components/movieBar/MovieBar";
+import {MovieDataContext} from "../../context/MovieDataContext";
 
 function Catalog() {
     const [movieID, setMovieID] = useState("")
@@ -14,7 +15,7 @@ function Catalog() {
     const [summary, setSummary] = useState("");
     const [movieData, setMovieData] = useState({});
     const [movies, setMovies] = useState({});
-
+    // const {movieData, setMovieData} = useContext(MovieDataContext);
 
     useEffect((e) => {
 

@@ -1,33 +1,17 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import './Home.css'
 import MovieCard from "../../components/movieCard/MovieCard";
 import TitleCard from "../../components/titlecard/TitleCard";
 
 import axios from "axios";
+import {MovieDataContext} from "../../context/MovieDataContext";
 
 function Home() {
 
-    const [movieData, setMovieData] = useState({})
+    // const [movieData, setMovieData] = useState({})
     const [card, setCard] = useState("1")
     const [movieQuery, setMovieQuery] = useState("1")
-
-    useEffect((e)=>{
-
-        async function fetchMovies(){
-            try{
-                const result = await axios.get( "http://localhost:8080/movies", {
-                    headers:{
-                        "Content-Type": "application/json",
-                        Authorization: `Bearer ${localStorage.getItem('token')}`,
-                    }});
-                console.log(result.data);
-                setMovieData(result.data);
-            } catch (e){
-                console.error(e);
-            }
-        }
-        fetchMovies();
-    },[]);
+    const {movieData, setMovieData} = useContext(MovieDataContext);
 
     useEffect((e) => {
 

@@ -1,6 +1,5 @@
 import React, {useContext} from "react";
 import './Profile.css'
-import SignUp from "../../pages/signUp/SignUp";
 
 
 import {AuthContext} from "../../context/AuthContext";
@@ -13,9 +12,9 @@ function Profile() {
         <>
             <div className="avatar">
                 avatar
-                <div className="welcome">
-                    <p> Hello {user.username} </p>
-                </div>
+                {/*<div className="welcome">*/}
+                {/*    <p> Hello {user.username} </p>*/}
+                {/*</div>*/}
             </div>
 
             <div className="userinfo">
