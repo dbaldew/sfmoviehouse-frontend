@@ -11,23 +11,26 @@ textarea {
 
 }
 
-.movie-form {
-
+.container{
     display: flex;
-    align-items:flex-start;
+    flex-direction: row;
     justify-content: flex-start;
+    align-items: flex-start;
 
 
+
+}
+
+.add-movie-form {
     border: black solid 1px;
     padding: 5px;
     margin: 5px;
-    max-height: 180px;
+    max-height: 800px;
+
 
 }
 
 .movie-info {
-
-
     border: black solid 1px;
     padding: 10px;
     margin: 10px;
@@ -78,9 +81,11 @@ textarea {
 
 
 .movie-list{
-    max-height: 350px;
+
     overflow-y: scroll;
     border: solid 1px black;
+    max-height: 500px;
+
 }
 
 
@@ -89,9 +94,15 @@ textarea {
     margin-left: 40px;
     width: 200px;
 
-
 }
+
 
 .filter-input{
-    height: 20px;
+    height: 30px;
 }
+.update-form{
+    display: flex;
+    
+
+}
+

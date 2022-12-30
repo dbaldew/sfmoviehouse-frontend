@@ -39,7 +39,6 @@ function MovieBar(props){
                 </button>
             </div>
         </div>
-
     );
 
 }

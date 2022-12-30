@@ -1,0 +1,47 @@
+.movie-input-card-container{
+    display: flex;
+    flex-direction: column;
+
+    max-height: 600px;
+
+
+}
+.home-movie-detail-poster {
+
+    border: black solid 1px;
+    padding: 10px;
+    margin: 10px;
+
+}
+
+.home-movie-detail-text {
+
+    border: black solid 1px;
+    padding: 10px;
+    margin: 10px;
+
+}
+
+.home-movie-detail-title {
+    padding: 10px;
+
+}
+
+.home-movie-detail-summary {
+    padding: 10px;
+
+}
+.home-movie-detail-category {
+    padding: 10px;
+
+}
+.home-movie-detail-year {
+    padding: 10px;
+
+}
+
+.home-movie-detail-description{
+    padding: 10px;
+
+}
+
