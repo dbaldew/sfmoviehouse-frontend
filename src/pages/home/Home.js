@@ -5,15 +5,11 @@ import TitleCard from "../../components/titlecard/TitleCard";
 
 import axios from "axios";
 
-
 function Home(props) {
-
 
     const [card, setCard] = useState("1")
     const [movieQuery, setMovieQuery] = useState("1")
     const {movieData}= props;
-
-
 
     useEffect((e) => {
 
