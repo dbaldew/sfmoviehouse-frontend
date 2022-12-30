@@ -7,6 +7,8 @@ function MovieBar(props){
     const{movieID, title, year, category} = props;
 
     return(
+
+
         <div className="movie-bar">
             <div className="movieID"
                  id="movieID"
