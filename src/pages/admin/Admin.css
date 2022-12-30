@@ -1,6 +1,7 @@
 label {
     display: flex;
     flex-direction: column;
+    margin-bottom: 10px;
 
 }
 
@@ -13,12 +14,14 @@ textarea {
 .movie-form {
 
     display: flex;
+    align-items:flex-start;
+    justify-content: flex-start;
 
-    background-color: #ffffff;
+
     border: black solid 1px;
     padding: 5px;
     margin: 5px;
-    max-height: 150px;
+    max-height: 180px;
 
 }
 
@@ -65,13 +68,12 @@ textarea {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 10px;
 
     border: black solid 1px;
-    padding: 10px;
-    margin: 10px;
-    height: 30px;
 
 }
+
 
 
 
@@ -79,4 +81,17 @@ textarea {
     max-height: 350px;
     overflow-y: scroll;
     border: solid 1px black;
+}
+
+
+.filter{
+    margin: 10px;
+    margin-left: 40px;
+    width: 200px;
+
+
+}
+
+.filter-input{
+    height: 20px;
 }

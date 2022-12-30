@@ -16,6 +16,7 @@ function Admin({movieData, setMovieData}) {
     const [listTitle, setListTitle] = useState("");
 
     const [refresh, setRefresh] = useState(false)
+    const [keyWord, setKeyword] = useState("")
 
 
     async function updateMovie(e) {
@@ -72,6 +73,11 @@ function Admin({movieData, setMovieData}) {
     function deleteMovie() {
         console.log("delete function");
     }
+
+    function filter(){
+
+    }
+
 
 
     return (
@@ -150,15 +156,26 @@ function Admin({movieData, setMovieData}) {
 
                 <div className="update-button">
                     <button type="submit"
-                    >Update movie list
+                    >Add movie
                     </button>
                 </div>
+
+
+
+
             </form>
 
 
             <div>
+
                 {Object.keys(movieData).length > 0 &&
                     <div className="movie-list">
+                        <div className="filter">
+                            <label htmlFor="filter">
+                                Keyword filter:
+                                <input className="filter-input" type="search"/>
+                            </label>
+                        </div>
                         <ul>
                             {movieData.map(movie => {
                                 const {movieID, title, year, category} = movie;
