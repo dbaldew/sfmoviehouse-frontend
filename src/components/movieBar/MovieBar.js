@@ -4,7 +4,7 @@ import './Moviebar.css'
 
 function MovieBar(props){
 
-    const{movieID, title, year, category} = props;
+    const{movieID, title, year, category, deleteMovie, editMovie} = props;
 
     return(
 
@@ -28,11 +28,13 @@ function MovieBar(props){
             </div>
             <div className="update">
                 <button type="submit"
+                        onClick={editMovie}
                 >Edit movie
                 </button>
             </div>
             <div className="delete">
                 <button type="submit"
+                        onClick={deleteMovie}
                 >Delete movie
                 </button>
             </div>

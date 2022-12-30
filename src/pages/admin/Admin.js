@@ -65,10 +65,14 @@ function Admin({movieData, setMovieData}) {
         fetchMovies();
     }, [refresh]);
 
-    function handleClick() {
+    function editMovie(){
+        console.log("edit function")
     }
 
-    console.log("movie-bar clicked")
+    function deleteMovie() {
+        console.log("delete function");
+    }
+
 
     return (
         <>
@@ -165,6 +169,8 @@ function Admin({movieData, setMovieData}) {
                                             title={title}
                                             year={year}
                                             category={category}
+                                            deleteMovie = {deleteMovie}
+                                            editMovie ={editMovie}
                                         />
                                     </li>
                                 );
