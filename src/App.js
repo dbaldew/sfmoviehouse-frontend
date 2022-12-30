@@ -8,7 +8,6 @@ import Admin from "./pages/admin/Admin";
 import TitleBar from "./components/titleBar/TitleBar";
 import Footer from "./components/footer/Footer";
 import SignIn from "./components/Auth/SignIn/SignIn";
-import Catalog from "./pages/catalog/Catalog";
 import {useEffect, useState} from 'react';
 import axios from "axios";
 
@@ -64,7 +63,10 @@ function App() {
                         <Profile/>
                     </Route>
                     <Route path="/admin">
-                        <Admin/>
+                        <Admin
+                        setMovieData={setMovieData}
+                        movieData = {movieData}
+                        />
                     </Route>
                 </Switch>
             </div>

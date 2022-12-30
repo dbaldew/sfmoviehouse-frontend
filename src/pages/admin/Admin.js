@@ -1,40 +1,27 @@
-import React, {useEffect, useState} from "react";
+import React, {useState, useEffect} from "react";
 import './Admin.css'
 import axios from "axios";
 
 
-function Admin() {
+function Admin({movieData, setMovieData}) {
 
     const [title, setTitle] = useState("");
     const [year, setYear] = useState(" ");
     const [category, setCategory] = useState(" ");
     const [description, setDescription] = useState("");
+    const [summary, setSummary] = useState("");
+
     const [error, toggleError] = useState(false);
     const [listTitle, setListTitle] = useState("");
-    const [summary, setSummary] = useState("");
-    const [movieData, setMovieData] = useState({});
 
-    useEffect((e)=>{
+    const [refresh, setRefresh] = useState(false)
 
-        async function fetchMovies(){
-            try{
-                const result = await axios.get( "http://localhost:8080/movies", {
-                    headers:{
-                    "Content-Type": "application/json",
-                    Authorization: `Bearer ${localStorage.getItem('token')}`,
-                }});
-                console.log(result.data);
-                setMovieData(result.data);
-            } catch (e){
-                console.error(e);
-            }
-        }
-        fetchMovies();
-    },[]);
+
 
     async function updateMovie(e) {
         e.preventDefault();
         toggleError(false);
+        setRefresh(false);
 
         try {
             const result = await axios.post("http://localhost:8080/movies", {
@@ -51,11 +38,30 @@ function Admin() {
             })
             console.log(result.data)
             setMovieData(result.data)
+            setRefresh(true)
         } catch (e) {
             console.error(e);
             toggleError(true);
         }
     }
+
+    useEffect((e)=>{
+
+        async function fetchMovies(){
+            try{
+                const result = await axios.get( "http://localhost:8080/movies", {
+                    headers:{
+                        "Content-Type": "application/json",
+                        Authorization: `Bearer ${localStorage.getItem('token')}`,
+                    }});
+                console.log(result.data);
+                setMovieData(result.data);
+            } catch (e){
+                console.error(e);
+            }
+        }
+        fetchMovies();
+    },[refresh]);
 
     return (
         <>
