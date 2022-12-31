@@ -21,7 +21,8 @@ Ga naar File | new | project from  version control
 
 Plak vervolgens de github link die je gecloned hebt in de url. 
 Maak een nieuwe map aan voor het project en klik op clone. 
-Klik vervolgens op ‘trust project’. Het project zal openen in Webstorm. 
+Klik vervolgens op ‘trust project’. 
+Het project zal openen in Webstorm. 
 
 Draai vervolgens de volgende code in de terminal:
 
