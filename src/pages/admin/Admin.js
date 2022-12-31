@@ -2,9 +2,7 @@ import React, {useState, useEffect} from "react";
 import './Admin.css'
 import axios from "axios";
 import MovieBar from "../../components/movieBar/MovieBar";
-
 import MovieInputCard from "../../components/movieInputCard/MovieInputCard";
-
 
 function Admin({movieData, setMovieData}) {
 
@@ -17,11 +15,7 @@ function Admin({movieData, setMovieData}) {
     const [alt, setAlt] = useState("");
 
     const [error, toggleError] = useState(false);
-    const [listTitle, setListTitle] = useState("");
-
     const [refresh, setRefresh] = useState(false)
-    const [searchTerm, setSearchTerm] = useState("")
-
 
     async function addMovie(e) {
         e.preventDefault();
@@ -50,27 +44,30 @@ function Admin({movieData, setMovieData}) {
         }
     }
 
-    function editMovie(){
-        //fill form with movie from movie id
-        //
-    }
+    async function updateMovie(id) {
 
-    async function updateMovie(e) {
-        e.preventDefault();
         toggleError(false);
         setRefresh(false);
 
-        console.log("edit function")
+
+        console.log("update function")
 
     }
 
-    async function deleteMovie(e) {
-        e.preventDefault();
-        toggleError(false);
-        setRefresh(false);
+    async function deleteMovie(id) {
 
-        console.log("delete function");
+        try {
+            const result = await axios.delete(`http://localhost:8080/movies/id/${id}`, {
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${localStorage.getItem('token')}`,
+                }
+            });
+            console.log(`${result.data.title} deleted`);
 
+        } catch (e) {
+            console.error(e);
+        }
     }
 
     useEffect((e) => {
@@ -204,7 +201,7 @@ function Admin({movieData, setMovieData}) {
                                                 year={year}
                                                 category={category}
                                                 deleteMovie={deleteMovie}
-                                                editMovie={editMovie}
+                                                updateMovie={updateMovie}
                                             />
                                         </li>
                                     );
