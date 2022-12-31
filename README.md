@@ -27,4 +27,5 @@ Het project zal openen in Webstorm.
 Draai vervolgens de volgende code in de terminal:
 
 npm install
+
 npm start
