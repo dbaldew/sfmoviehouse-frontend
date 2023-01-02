@@ -5,7 +5,7 @@ Installatie frontend
 Om dit bestand te  kunnen bekijken is de volgende software nodig:
 
 Een IDE zoals bijvoorbeeld Webstorm. 
-https://www.jetbrains.com/webstorm/download/#section=windows
+[Webstorm](https://www.jetbrains.com/webstorm/download/#section=windows)
 
 Node.js
 https://nodejs.org/en/download/
