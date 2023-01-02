@@ -4,15 +4,17 @@ Installatie frontend
 
 Om dit bestand te  kunnen bekijken is de volgende software nodig:
 
-Een IDE zoals bijvoorbeeld Webstorm. 
+<p>Een IDE zoals bijvoorbeeld Webstorm.</p>
 https://www.jetbrains.com/webstorm/download/#section=windows
 
-Node.js
+<p>Node.js</p>
 https://nodejs.org/en/download/
 
+<p>Git</p>
 Git
 https://git-scm.com/downloads
 
+<p>Clone het project van de volgende github link:</p>
 Clone het project van de volgende github link:
 https://github.com/dbaldew/sfmoviehouse-frontend
 
