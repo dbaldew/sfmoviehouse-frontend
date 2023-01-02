@@ -3,6 +3,7 @@ Readme SF Moviehouse Frontend
 Installatie frontend 
 
 Om dit bestand te  kunnen bekijken is de volgende software nodig:
+<br>
 <p>Een IDE zoals bijvoorbeeld Webstorm.</p>
 <P>https://www.jetbrains.com/webstorm/download/#section=windows</P>
 <br>
@@ -29,4 +30,5 @@ Draai vervolgens de volgende code in de terminal:
 <br>
 
 npm install
+<br>
 npm start
