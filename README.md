@@ -1,6 +1,6 @@
 ### Readme SF Moviehouse Frontend
 
-Installatie
+#### Installatie
 
 Om dit bestand te  kunnen bekijken is de volgende software nodig:
 
@@ -25,6 +25,7 @@ Klik vervolgens op ‘trust project’.
 Het project zal openen in Webstorm.
 
 Draai vervolgens de volgende code in de terminal:
+
 
 npm install
 
