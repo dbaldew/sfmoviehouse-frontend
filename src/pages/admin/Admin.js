@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import './Admin.css'
 import axios from "axios";
 import MovieBar from "../../components/movieBar/MovieBar";
+import FileUpload from "../../components/fileUpload/FileUpload";
 
 
 function Admin({movieData, setMovieData}) {
@@ -127,18 +128,6 @@ function Admin({movieData, setMovieData}) {
                             </label>
                         </div>
 
-                        <div className="movie-img">
-                            <label htmlFor="img">
-                                Select image:
-                            </label>
-                            <input type="file"
-                                   id="img"
-                                   name="img"
-                                   title=""
-                                   accept="image/*"
-                            />
-                        </div>
-
                         <div className="desc-summary">
                             <label htmlFor="summary">
                                 Summary
@@ -198,6 +187,19 @@ function Admin({movieData, setMovieData}) {
                             </ul>
                         </div>
                     }
+                </div>
+                <div className="movie-img">
+                    {/*<label htmlFor="img">*/}
+                    {/*    Select image:*/}
+                    {/*</label>*/}
+                    {/*<input type="file"*/}
+                    {/*       id="img"*/}
+                    {/*       name="img"*/}
+                    {/*       title=""*/}
+                    {/*       accept="image/*"*/}
+                    {/*       onClick={handleUpload}*/}
+                    {/*/>*/}
+                    <FileUpload/>
                 </div>
             </div>
         </>
