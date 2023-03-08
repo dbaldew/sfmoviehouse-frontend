@@ -2,7 +2,7 @@ import React, {useState, useEffect} from "react";
 import './Admin.css'
 import axios from "axios";
 import MovieBar from "../../components/movieBar/MovieBar";
-import MovieInputCard from "../../components/movieInputCard/MovieInputCard";
+
 
 function Admin({movieData, setMovieData}) {
 
@@ -95,6 +95,7 @@ function Admin({movieData, setMovieData}) {
         <>
             <div className="container">
                 <div>
+
                     <form className="add-movie-form" onSubmit={addMovie}>
                         <div className="movie-info">
                             <label htmlFor="title">
@@ -126,17 +127,17 @@ function Admin({movieData, setMovieData}) {
                             </label>
                         </div>
 
-                        {/*<div className="movie-img">*/}
-                        {/*    <label htmlFor="img">*/}
-                        {/*        Select image:*/}
-                        {/*    </label>*/}
-                        {/*    <input type="file"*/}
-                        {/*           id="img"*/}
-                        {/*           name="img"*/}
-                        {/*           title=""*/}
-                        {/*           accept="image/*"*/}
-                        {/*    />*/}
-                        {/*</div>*/}
+                        <div className="movie-img">
+                            <label htmlFor="img">
+                                Select image:
+                            </label>
+                            <input type="file"
+                                   id="img"
+                                   name="img"
+                                   title=""
+                                   accept="image/*"
+                            />
+                        </div>
 
                         <div className="desc-summary">
                             <label htmlFor="summary">
@@ -178,18 +179,6 @@ function Admin({movieData, setMovieData}) {
                 <div>
                     {Object.keys(movieData).length > 0 &&
                         <div className="movie-list">
-                            {/*<div className="filter">*/}
-                            {/*    <label className="filter-label" htmlFor="filter">*/}
-                            {/*        Keyword filter:*/}
-                            {/*        <input className="filter-input"*/}
-                            {/*               type="search"*/}
-                            {/*               placeholder="enter a keyword to filter the list"*/}
-                            {/*               onChange={event => {*/}
-                            {/*                   setSearchTerm(event.target.value)*/}
-                            {/*               }}*/}
-                            {/*        />*/}
-                            {/*    </label>*/}
-                            {/*</div>*/}
                             <ul>
                                 {movieData.map(movie => {
                                     const {movieID, title, year, category} = movie;
@@ -210,21 +199,7 @@ function Admin({movieData, setMovieData}) {
                         </div>
                     }
                 </div>
-                <div className="update-form">
-                    <MovieInputCard
-                        img={img}
-                        alt={alt}
-                        title={title}
-                        summary={summary}
-                        category={category}
-                        year={year}
-                        description={description}
-                        updateMovie = {updateMovie}
-                    />
-                </div>
             </div>
-
-
         </>
     )
 }

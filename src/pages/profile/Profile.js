@@ -12,9 +12,6 @@ function Profile() {
         <>
             <div className="avatar">
                 avatar
-                {/*<div className="welcome">*/}
-                {/*    <p> Hello {user.username} </p>*/}
-                {/*</div>*/}
             </div>
 
             <div className="userinfo">
@@ -38,7 +35,6 @@ function Profile() {
                     text
                 </div>
             </div>
-            {/*<SignUp/>*/}
         </>
     )
 }

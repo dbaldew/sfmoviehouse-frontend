@@ -13,31 +13,25 @@ import axios from "axios";
 
 
 function App() {
-
     const [movieData, setMovieData] = useState({})
 
-    useEffect((e)=>{
-
-        async function fetchMovies(){
-            try{
-                const result = await axios.get( "http://localhost:8080/movies", {
-                    headers:{
-                        "Content-Type": "application/json",
-                        Authorization: `Bearer ${localStorage.getItem('token')}`,
-                    }});
-                console.log(result.data);
-                setMovieData(result.data);
-            } catch (e){
-                console.error(e);
-            }
+    function fetchMovies() {
+        try {
+            const result = axios.get("http://localhost:8080/movies", {
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${localStorage.getItem('token')}`,
+                }
+            });
+            console.log(result.data);
+            setMovieData(result.data);
+        } catch (e) {
+            console.error(e);
         }
-        fetchMovies();
-    },[]);
-
+    }
 
     return (
         <div className="App">
-
             <div className="header">
                 <TitleBar/>
             </div>
@@ -45,32 +39,24 @@ function App() {
                 <NavBar/>
                 <SignIn/>
             </div>
-
             <div className="page">
                 <Switch>
                     <Route exact path="/">
                         <Home
-                            movieData = {movieData}
+                            movieData={movieData}
                         />
                     </Route>
-                    {/*<Route path="/catalog">*/}
-                    {/*    <Catalog*/}
-                    {/*        movieData = {movieData}*/}
-
-                    {/*    />*/}
-                    {/*</Route>*/}
                     <Route path="/profile">
                         <Profile/>
                     </Route>
                     <Route path="/admin">
                         <Admin
-                        setMovieData={setMovieData}
-                        movieData = {movieData}
+                            setMovieData={setMovieData}
+                            movieData={movieData}
                         />
                     </Route>
                 </Switch>
             </div>
-
             <div className="footer">
                 <Footer/>
             </div>

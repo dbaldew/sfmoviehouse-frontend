@@ -11,6 +11,7 @@ function Home(props) {
     const [movieQuery, setMovieQuery] = useState("1")
     const {movieData}= props;
 
+
     useEffect((e) => {
 
         async function fetchMovie() {
@@ -66,7 +67,6 @@ function Home(props) {
             </div>
         </>
     )
-
 }
 
 export default Home;
