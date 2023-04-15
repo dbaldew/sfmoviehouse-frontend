@@ -1,4 +1,4 @@
-### Readme SF Moviehouse Frontend V2
+### Readme SF Moviehouse Frontend v3
 
 #### Installatie
 
